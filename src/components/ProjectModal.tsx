@@ -26,8 +26,8 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 bg-background/95 backdrop-blur-xl border border-border/50">
-        <DialogHeader className="p-4 pb-1 border-b border-border/20">
-          <div className="flex items-center justify-between">
+        <DialogHeader className="p-2 border-b border-border/20">
+          <div className="flex items-center gap-4">
             <button
               onClick={onClose}
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
@@ -35,22 +35,14 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Zurück zu Projekten
             </button>
-            <div className="flex items-center gap-4">
-              <DialogTitle className="text-lg font-semibold">
-                {project.title}
-              </DialogTitle>
-              <button
-                onClick={onClose}
-                className="w-8 h-8 rounded-full bg-muted hover:bg-muted/80 flex items-center justify-center transition-colors"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
+            <DialogTitle className="text-lg font-semibold">
+              {project.title}
+            </DialogTitle>
           </div>
         </DialogHeader>
         
-        <div className="flex-1 p-1 pt-0">
-          <div className="w-full h-full rounded-lg overflow-hidden bg-muted/20 relative">
+        <div className="flex-1 p-0">
+          <div className="w-full h-full overflow-hidden bg-muted/20 relative">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-10">
                 <div className="flex flex-col items-center gap-4">
@@ -62,7 +54,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
             {project.embedUrl ? (
               <iframe
                 src={project.embedUrl}
-                className="w-full h-full border-0 rounded-lg"
+                className="w-full h-full border-0"
                 title={project.title}
                 onLoad={handleIframeLoad}
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
