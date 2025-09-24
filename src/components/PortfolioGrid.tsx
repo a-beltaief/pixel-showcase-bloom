@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { portfolioProjects, categories } from '@/data/portfolio';
 import type { PortfolioProject } from '@/data/portfolio';
 import { ProjectModal } from './ProjectModal';
-import bookingThumbnail from '@/assets/booking-system-thumbnail.jpg';
+
 
 export const PortfolioGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState('Alle');
@@ -120,10 +120,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index, isVi
     >
       {/* Project Image */}
       <div className="relative h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
-        {project.id === "6" ? (
-          // Special thumbnail for Booking System
+        {project.image.startsWith('/lovable-uploads/') ? (
           <img 
-            src={bookingThumbnail} 
+            src={project.image} 
             alt={project.title}
             className="w-full h-full object-cover"
           />
