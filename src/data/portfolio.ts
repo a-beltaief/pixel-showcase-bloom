@@ -29,6 +29,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/project-2.jpg",
     technologies: ["Vue.js", "Nuxt.js", "Strapi", "Tailwind"],
     url: "https://example.com",
+    embedUrl: "https://timeless-craftsmanship-showcase.lovable.app/",
     featured: true
   },
   {
