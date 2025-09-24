@@ -6,6 +6,7 @@ export interface PortfolioProject {
   image: string;
   technologies: string[];
   url?: string;
+  embedUrl?: string;
   featured: boolean;
 }
 
@@ -63,12 +64,12 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     id: "6",
     title: "Booking System",
-    description: "Online-Buchungssystem für Dienstleistungen",
+    description: "Modernes Buchungssystem für Hotels und Unterkünfte",
     category: "Web App",
     image: "/project-6.jpg",
-    technologies: ["React", "Firebase", "Calendar API"],
-    url: "https://example.com",
-    featured: false
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
+    embedUrl: "https://modern-seaside-stay-1815.lovable.app/",
+    featured: true
   }
 ];
 

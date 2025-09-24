@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
-import { portfolioProjects, categories, PortfolioProject } from "../data/portfolio";
+import React, { useState, useEffect } from 'react';
+import { portfolioProjects, categories } from '@/data/portfolio';
+import type { PortfolioProject } from '@/data/portfolio';
+import { ProjectModal } from './ProjectModal';
 
 export const PortfolioGrid = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Alle");
-  const [filteredProjects, setFilteredProjects] = useState<PortfolioProject[]>(portfolioProjects);
+  const [selectedCategory, setSelectedCategory] = useState('Alle');
+  const [filteredProjects, setFilteredProjects] = useState(portfolioProjects);
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,12 +27,26 @@ export const PortfolioGrid = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedCategory === "Alle") {
+    if (selectedCategory === 'Alle') {
       setFilteredProjects(portfolioProjects);
     } else {
       setFilteredProjects(portfolioProjects.filter(project => project.category === selectedCategory));
     }
   }, [selectedCategory]);
+
+  const handleProjectClick = (project: PortfolioProject) => {
+    if (project.embedUrl) {
+      setSelectedProject(project);
+      setIsModalOpen(true);
+    } else if (project.url) {
+      window.open(project.url, '_blank');
+    }
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <section id="portfolio" className="py-24 px-6 bg-background-secondary">
@@ -67,12 +85,19 @@ export const PortfolioGrid = () => {
           {filteredProjects.map((project, index) => (
             <ProjectCard 
               key={project.id} 
-              project={project} 
+              project={project}
+              onClick={handleProjectClick}
               index={index}
               isVisible={isVisible}
             />
           ))}
         </div>
+
+        <ProjectModal 
+          project={selectedProject}
+          isOpen={isModalOpen}
+          onClose={handleModalClose}
+        />
       </div>
     </section>
   );
@@ -80,15 +105,17 @@ export const PortfolioGrid = () => {
 
 interface ProjectCardProps {
   project: PortfolioProject;
+  onClick: (project: PortfolioProject) => void;
   index: number;
   isVisible: boolean;
 }
 
-const ProjectCard = ({ project, index, isVisible }: ProjectCardProps) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index, isVisible }) => {
   return (
     <div 
-      className={`portfolio-card group transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+      className={`portfolio-card group transform transition-all duration-700 cursor-pointer ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
       style={{ animationDelay: `${index * 150}ms` }}
+      onClick={() => onClick(project)}
     >
       {/* Project Image */}
       <div className="relative h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
@@ -107,10 +134,10 @@ const ProjectCard = ({ project, index, isVisible }: ProjectCardProps) => {
         
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <button className="btn-hero">
-            Projekt ansehen
+          <div className="bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-sm transition-all duration-300 px-4 py-2 text-sm font-medium">
+            {project.embedUrl ? 'Live ansehen' : 'Projekt ansehen'}
             <span className="ml-2">↗</span>
-          </button>
+          </div>
         </div>
       </div>
 
@@ -141,18 +168,11 @@ const ProjectCard = ({ project, index, isVisible }: ProjectCardProps) => {
           )}
         </div>
 
-        {/* Project Link */}
-        {project.url && (
-          <a 
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-accent font-medium hover:text-accent-foreground transition-colors duration-300"
-          >
-            Live ansehen
-            <span className="ml-2 transform transition-transform group-hover:translate-x-1">→</span>
-          </a>
-        )}
+        {/* Action Button */}
+        <div className="flex items-center text-accent font-medium group-hover:text-accent-foreground transition-colors duration-300">
+          {project.embedUrl ? 'Live ansehen' : 'Projekt ansehen'}
+          <span className="ml-2 transform transition-transform group-hover:translate-x-1">→</span>
+        </div>
       </div>
     </div>
   );
