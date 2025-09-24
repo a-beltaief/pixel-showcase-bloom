@@ -25,8 +25,8 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 bg-background/95 backdrop-blur-xl border border-border/50">
-        <DialogHeader className="p-2 border-b border-border/20">
+      <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 gap-0 bg-background/95 backdrop-blur-xl border border-border/50 [&>button]:hidden">
+        <DialogHeader className="p-2 pb-0 border-b border-border/20 space-y-0">
           <div className="flex items-center gap-4">
             <button
               onClick={onClose}
@@ -41,8 +41,8 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
           </div>
         </DialogHeader>
         
-        <div className="flex-1 p-0">
-          <div className="w-full h-full overflow-hidden bg-muted/20 relative">
+        <div className="flex-1">
+          <div className="w-full h-full overflow-hidden relative">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-10">
                 <div className="flex flex-col items-center gap-4">
