@@ -78,10 +78,32 @@ export default {
             height: "0",
           },
         },
+        "zoom-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.3) translate(-50%, -50%)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translate(-50%, -50%)",
+          },
+        },
+        "zoom-out": {
+          "0%": {
+            opacity: "1",
+            transform: "scale(1) translate(-50%, -50%)",
+          },
+          "100%": {
+            opacity: "0",
+            transform: "scale(0.3) translate(-50%, -50%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "zoom-in": "zoom-in 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+        "zoom-out": "zoom-out 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },
