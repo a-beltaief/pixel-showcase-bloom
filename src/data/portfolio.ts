@@ -26,7 +26,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Corporate Website",
     description: "Responsive Unternehmenswebsite mit CMS-Integration",
     category: "Corporate",
-    image: "/project-2.jpg",
+    image: "/corporate-website-thumbnail.png",
     technologies: ["Vue.js", "Nuxt.js", "Strapi", "Tailwind"],
     url: "https://example.com",
     embedUrl: "https://timeless-craftsmanship-showcase.lovable.app/",
