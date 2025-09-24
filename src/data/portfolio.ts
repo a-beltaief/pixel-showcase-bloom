@@ -66,7 +66,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Booking System",
     description: "Modernes Buchungssystem für Hotels und Unterkünfte",
     category: "Web App",
-    image: "/project-6.jpg",
+    image: "/src/assets/booking-system-thumbnail.jpg",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
     embedUrl: "https://modern-seaside-stay-1815.lovable.app/",
     featured: true

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { portfolioProjects, categories } from '@/data/portfolio';
 import type { PortfolioProject } from '@/data/portfolio';
 import { ProjectModal } from './ProjectModal';
+import bookingThumbnail from '@/assets/booking-system-thumbnail.jpg';
 
 export const PortfolioGrid = () => {
   const [selectedCategory, setSelectedCategory] = useState('Alle');
@@ -119,18 +120,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index, isVi
     >
       {/* Project Image */}
       <div className="relative h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-              <span className="text-2xl font-bold text-accent">
-                {project.title.charAt(0)}
+        {project.id === "6" ? (
+          // Special thumbnail for Booking System
+          <img 
+            src={bookingThumbnail} 
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-accent">
+                  {project.title.charAt(0)}
+                </span>
+              </div>
+              <span className="text-foreground-muted font-medium">
+                {project.category}
               </span>
             </div>
-            <span className="text-foreground-muted font-medium">
-              {project.category}
-            </span>
           </div>
-        </div>
+        )}
         
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

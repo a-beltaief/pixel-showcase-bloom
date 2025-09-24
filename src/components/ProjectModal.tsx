@@ -26,7 +26,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-[95vw] w-full h-[95vh] p-0 bg-background/95 backdrop-blur-xl border border-border/50">
-        <DialogHeader className="p-6 pb-4 border-b border-border/20">
+        <DialogHeader className="p-4 pb-2 border-b border-border/20">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
@@ -51,10 +51,10 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
           </div>
         </DialogHeader>
         
-        <div className="flex-1 p-6 pt-0">
+        <div className="flex-1 p-2">
           <div className="w-full h-full rounded-lg overflow-hidden bg-muted/20 relative">
             {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+              <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-10">
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                   <p className="text-sm text-muted-foreground">Projekt wird geladen...</p>
