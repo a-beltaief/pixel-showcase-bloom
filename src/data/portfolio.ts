@@ -16,9 +16,10 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "E-Commerce Platform",
     description: "Moderne Online-Shop-Lösung mit React und Node.js",
     category: "E-Commerce",
-    image: "/project-1.jpg",
+    image: "/ecommerce-platform-thumbnail.png",
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     url: "https://example.com",
+    embedUrl: "https://regal-boutique-project.lovable.app/",
     featured: true
   },
   {
@@ -26,7 +27,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Corporate Website",
     description: "Responsive Unternehmenswebsite mit CMS-Integration",
     category: "Corporate",
-    image: "/corporate-website-thumbnail.png",
+    image: "/corporate-website-new-thumbnail.png",
     technologies: ["Vue.js", "Nuxt.js", "Strapi", "Tailwind"],
     url: "https://example.com",
     embedUrl: "https://timeless-craftsmanship-showcase.lovable.app/",
