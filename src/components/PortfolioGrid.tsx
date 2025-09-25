@@ -120,26 +120,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index, isVi
     >
       {/* Project Image */}
       <div className="relative h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
-        {project.image.startsWith('/lovable-uploads/') ? (
-          <img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-accent">
-                  {project.title.charAt(0)}
-                </span>
-              </div>
-              <span className="text-foreground-muted font-medium">
-                {project.category}
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            target.nextElementSibling?.classList.remove('hidden');
+          }}
+        />
+        <div className="absolute inset-0 hidden items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+              <span className="text-2xl font-bold text-accent">
+                {project.title.charAt(0)}
               </span>
             </div>
+            <span className="text-foreground-muted font-medium">
+              {project.category}
+            </span>
           </div>
-        )}
+        </div>
         
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
