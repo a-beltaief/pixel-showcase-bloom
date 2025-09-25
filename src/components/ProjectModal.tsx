@@ -53,10 +53,15 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
           {project.embedUrl ? (
             <iframe
               src={project.embedUrl}
-              className="w-full h-full border-0"
+              className="w-full h-full border-0 overflow-hidden"
               title={project.title}
               onLoad={handleIframeLoad}
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+              style={{ 
+                transform: "scale(1)", 
+                transformOrigin: "0 0",
+                overflow: "hidden"
+              }}
             />
           ) : (
             <div className="flex items-center justify-center h-full">
