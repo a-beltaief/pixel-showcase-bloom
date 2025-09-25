@@ -16,7 +16,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "E-Commerce Platform",
     description: "Moderne Online-Shop-Lösung mit React und Node.js",
     category: "E-Commerce",
-    image: "/ecommerce-platform-thumbnail.png",
+    image: "/ecommerce-platform-new-thumbnail.png",
     technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
     url: "https://example.com",
     embedUrl: "https://regal-boutique-project.lovable.app/",
