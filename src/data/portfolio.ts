@@ -58,7 +58,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Portfolio Website",
     description: "Kreative Portfolio-Website für Designer",
     category: "Portfolio",
-    image: "/portfolio-website-thumbnail.png",
+    image: "",
     technologies: ["Gatsby", "GraphQL", "Contentful"],
     url: "https://example.com", 
     featured: false
