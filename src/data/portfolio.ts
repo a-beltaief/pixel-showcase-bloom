@@ -38,7 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "SaaS Dashboard",
     description: "Datenvisualisierung und Analytics Dashboard",
     category: "SaaS",
-    image: "/saas-dashboard-thumbnail.png",
+    image: "/project-3.jpg", 
     technologies: ["React", "TypeScript", "Chart.js", "Express"],
     url: "https://example.com",
     featured: true
