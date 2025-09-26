@@ -71,23 +71,27 @@ export const Contact = () => {
       // Validate form data with Zod
       const validatedData = contactSchema.parse(formData);
       
-      console.log('Sending contact form submission:', validatedData);
+      console.log('✅ Formular validiert, sende Anfrage:', validatedData);
+      console.log('🚀 Rufe Supabase Edge Function auf...');
 
       // Call the Supabase Edge Function
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: validatedData,
       });
 
+      console.log('📡 Supabase Antwort:', { data, error });
+
       if (error) {
-        console.error('Supabase function error:', error);
+        console.error('❌ Supabase function error:', error);
         throw new Error(error.message || 'Fehler beim Versenden der Nachricht');
       }
 
       if (!data?.success) {
+        console.error('❌ Function returned error:', data);
         throw new Error(data?.error || 'Unbekannter Fehler beim Versenden');
       }
 
-      console.log('Contact form submission successful:', data);
+      console.log('✅ Contact form submission successful:', data);
 
       // Show success message
       toast({
