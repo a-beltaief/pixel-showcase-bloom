@@ -119,7 +119,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, index, isVi
       onClick={() => onClick(project)}
     >
       {/* Project Image */}
-      <div className="relative h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
+      <div className="relative aspect-video overflow-hidden rounded-t-3xl bg-gradient-to-br from-accent/20 to-primary/10">
         <img 
           src={project.image} 
           alt={project.title}

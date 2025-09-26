@@ -54,16 +54,6 @@ export const portfolioProjects: PortfolioProject[] = [
     featured: false
   },
   {
-    id: "5",
-    title: "Portfolio Website",
-    description: "Kreative Portfolio-Website für Designer",
-    category: "Portfolio",
-    image: "",
-    technologies: ["Gatsby", "GraphQL", "Contentful"],
-    url: "https://example.com", 
-    featured: false
-  },
-  {
     id: "6",
     title: "Booking System",
     description: "Modernes Buchungssystem für Hotels und Unterkünfte",
