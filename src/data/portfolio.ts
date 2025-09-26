@@ -48,7 +48,7 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Mobile App Landing",
     description: "Conversion-optimierte Landing Page für Mobile App",
     category: "Landing Page",
-    image: "/project-4.jpg",
+    image: "/mobile-app-landing-thumbnail.png",
     technologies: ["Next.js", "Framer Motion", "Vercel"],
     url: "https://example.com",
     featured: false
