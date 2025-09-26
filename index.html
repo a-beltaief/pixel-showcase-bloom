@@ -5,11 +5,14 @@
     <link rel="icon" href="/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Performance optimizations: preload critical resources -->
+    <!-- Performance optimizations: break critical request chain -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <!-- Load only essential font weights to reduce chain length -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+    <!-- Preload the actual font file to eliminate additional network round trip -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
     <title>Portfolio | Moderne Webentwicklung aus Berlin</title>
     <meta name="description" content="Professionelle Webentwicklung mit modernem Design und Apple-inspirierter Ästhetik. Entdecken Sie einzigartige digitale Erlebnisse." />
     <meta name="author" content="Portfolio Developer" />
