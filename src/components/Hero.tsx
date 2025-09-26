@@ -47,15 +47,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-          <div className="flex flex-col items-center text-foreground-muted">
-            <span className="text-sm font-medium mb-3 tracking-wide">Scroll</span>
-            <div className="w-6 h-10 border-2 border-card-border rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-bounce"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
