@@ -40,7 +40,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "SaaS",
     image: "/saas-dashboard-thumbnail.jpg", 
     technologies: ["React", "TypeScript", "Chart.js", "Express"],
-    url: "https://example.com",
+    embedUrl: "https://utility-compass-flow-45.lovable.app/",
     featured: true
   },
   {
