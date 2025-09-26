@@ -64,7 +64,7 @@ export const Contact = () => {
                   E-Mail
                 </h3>
                 <p className="text-foreground-muted group-hover:text-foreground transition-colors">
-                  hello@portfolio.dev
+                  info@princeberg.com
                 </p>
               </div>
               
@@ -73,7 +73,7 @@ export const Contact = () => {
                   Telefon
                 </h3>
                 <p className="text-foreground-muted group-hover:text-foreground transition-colors">
-                  +49 (0) 123 456 789
+                  +436764002129
                 </p>
               </div>
               
@@ -82,7 +82,7 @@ export const Contact = () => {
                   Standort
                 </h3>
                 <p className="text-foreground-muted group-hover:text-foreground transition-colors">
-                  Berlin, Deutschland
+                  Wien, Österreich
                 </p>
               </div>
             </div>

@@ -50,7 +50,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "Landing Page",
     image: "/mobile-app-landing-thumbnail.png",
     technologies: ["Next.js", "Framer Motion", "Vercel"],
-    url: "https://example.com",
+    embedUrl: "https://princeberg-elite-webfront.lovable.app/",
     featured: false
   },
   {
