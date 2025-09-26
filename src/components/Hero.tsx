@@ -22,7 +22,7 @@ export const Hero = () => {
             <span className="block text-gradient">Portfolio</span>
           </h1>
           
-          <p className={`text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto leading-relaxed mb-12 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          <p className="text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto leading-relaxed mb-12">
             Moderne Webseiten, die begeistern und konvertieren. 
             Entdecken Sie einzigartige digitale Erlebnisse mit 
             <span className="text-accent font-medium"> perfekter Balance aus Design und Funktionalität</span>.
