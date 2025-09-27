@@ -16,6 +16,12 @@ export const Navigation = () => {
             >
               Projekte
             </button>
+            <a 
+              href="/termine"
+              className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Termine
+            </a>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
