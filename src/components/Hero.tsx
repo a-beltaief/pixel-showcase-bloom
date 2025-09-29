@@ -28,23 +28,27 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-foreground-muted mb-6">
-          Handgefertigte Websites im Monatsabo
+          Professionelle Websites. Ohne Investoren-Nonsens.
         </h2>
         
-        <p className="text-xl md:text-2xl text-foreground mb-3">
-          <strong>Haris & Abderrahmen</strong> - JKU-Studenten
+        <p className="text-lg md:text-xl text-foreground mb-4">
+          <strong>Haris & Abderrahmen</strong> - JKU-Studenten mit einem simplen Plan:
+        </p>
+        
+        <p className="text-xl md:text-2xl text-foreground mb-4">
+          Faire Preise. Echte Qualität. In 14 Tagen online.
         </p>
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Ab 50€/Monat. Alles inklusive.
+          Ab 50€/Monat. Kein Kleingedrucktes.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
-            href="#pricing"
+            href="#story"
             className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-hover transition-colors"
           >
-            Pakete ansehen
+            Unsere Story
           </a>
           <a 
             href="https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20eine%20Website!"
@@ -52,7 +56,7 @@ export const Hero = () => {
             rel="noopener noreferrer"
             className="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors"
           >
-            WhatsApp-Kontakt
+            Direkt starten
           </a>
         </div>
       </div>

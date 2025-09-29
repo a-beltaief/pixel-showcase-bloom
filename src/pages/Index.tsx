@@ -2,12 +2,16 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Philosophy } from "@/components/Philosophy";
 import { Founders } from "@/components/Founders";
+import { StorySection } from "@/components/StorySection";
+import { PriceTransparency } from "@/components/PriceTransparency";
+import { PhilosophySection } from "@/components/PhilosophySection";
 import { WhatYouGet } from "@/components/WhatYouGet";
-import { Timeline } from "@/components/Timeline";
 import { Pricing } from "@/components/Pricing";
 import { ProcessSection } from "@/components/ProcessSection";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
 import { SuccessStories } from "@/components/SuccessStories";
+import { FAQSection } from "@/components/FAQSection";
+import { NewContact } from "@/components/NewContact";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -19,12 +23,16 @@ const Index = () => {
         <Hero />
         <Philosophy />
         <Founders />
+        <StorySection />
+        <PriceTransparency />
+        <PhilosophySection />
         <WhatYouGet />
-        <Timeline />
         <Pricing />
         <ProcessSection />
         <PortfolioGrid />
         <SuccessStories />
+        <FAQSection />
+        <NewContact />
         <Contact />
         <Footer />
       </div>
