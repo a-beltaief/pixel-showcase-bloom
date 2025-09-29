@@ -1,81 +1,48 @@
 import PixelBlast from "./PixelBlast";
-import PillNav from "./PillNav";
 
 export const Hero = () => {
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Preise', href: '#pricing' },
-    { label: 'Kontakt', href: '#contact' },
-    { label: 'Blog', href: '/blog' }
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-white">
-      {/* Navigation */}
-      <PillNav
-        logoText="PRINCEBERG"
-        items={navItems}
-        activeHref="/"
-        baseColor="#ffffff"
-        pillColor="#000000"
-        hoveredPillTextColor="#ffffff"
-        pillTextColor="#000000"
-        initialLoadAnimation={true}
-      />
-
+    <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* PixelBlast Background Effect */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 opacity-20">
         <PixelBlast
           variant="circle"
-          pixelSize={6}
+          pixelSize={4}
           color="#0066FF"
-          patternScale={3}
-          patternDensity={1.2}
-          pixelSizeJitter={0.5}
-          enableRipples
-          rippleSpeed={0.4}
-          rippleThickness={0.12}
-          rippleIntensityScale={1.5}
-          liquid
-          liquidStrength={0.12}
-          liquidRadius={1.2}
-          liquidWobbleSpeed={5}
-          speed={0.6}
-          edgeFade={0.25}
-          transparent
+          patternScale={2.5}
+          patternDensity={1.1}
+          pixelSizeJitter={0.3}
+          enableRipples={true}
+          rippleSpeed={0.3}
+          rippleThickness={0.08}
+          rippleIntensityScale={1.2}
+          speed={0.4}
+          edgeFade={0.3}
+          transparent={true}
         />
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h1 
-          className="text-black font-bold tracking-tight mb-6"
-          style={{
-            fontFamily: 'Figtree, sans-serif',
-            fontWeight: 700,
-            letterSpacing: '-2px',
-            fontSize: 'clamp(2rem, 4vw, 2.6rem)'
-          }}
-        >
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-primary">
           PRINCEBERG
         </h1>
         
-        <h2 className="text-2xl md:text-3xl text-black/90 mb-6">
+        <h2 className="text-2xl md:text-3xl text-foreground-muted mb-6">
           Handgefertigte Websites im Monatsabo
         </h2>
         
-        <p className="text-xl md:text-2xl text-black/95 mb-3">
+        <p className="text-xl md:text-2xl text-foreground mb-3">
           <strong>Haris & Abderrahmen</strong> - JKU-Studenten
         </p>
         
-        <p className="text-2xl md:text-3xl font-semibold text-black mb-8">
+        <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
           Ab 50€/Monat. Alles inklusive.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
             href="#pricing"
-            className="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors"
+            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-hover transition-colors"
           >
             Pakete ansehen
           </a>
@@ -83,7 +50,7 @@ export const Hero = () => {
             href="https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20eine%20Website!"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors"
+            className="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors"
           >
             WhatsApp-Kontakt
           </a>
