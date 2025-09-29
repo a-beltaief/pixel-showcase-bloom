@@ -1,17 +1,21 @@
 import { MessageCircle, Linkedin } from "lucide-react";
+import harisImage from "@/assets/haris-new.jpg";
+import abderrahmenImage from "@/assets/abderrahmen-new.jpg";
 
 export const Founders = () => {
   const founders = [
     {
       name: "Haris Muranovic",
       role: "Developer",
+      image: harisImage,
       whatsapp: "+43 670 405 5549",
       whatsappLink: "https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20eine%20Website!",
       linkedin: "https://www.linkedin.com/in/muranovic/"
     },
     {
       name: "Abderrahmen Beltaief",
-      role: "Designer", 
+      role: "Designer",
+      image: abderrahmenImage,
       whatsapp: "+43 676 400 2129",
       whatsappLink: "https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20interessiere%20mich%20für%20eine%20Website!",
       linkedin: "https://www.linkedin.com/in/abeltaief/"
@@ -30,8 +34,17 @@ export const Founders = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {founders.map((founder, index) => (
             <div key={index} className="bg-card rounded-xl p-6 border border-card-border">
-              <h3 className="text-xl font-bold text-primary mb-2">{founder.name}</h3>
-              <p className="text-foreground-muted mb-4">{founder.role}</p>
+              <div className="flex items-center gap-4 mb-4">
+                <img 
+                  src={founder.image} 
+                  alt={founder.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-primary">{founder.name}</h3>
+                  <p className="text-foreground-muted">{founder.role}</p>
+                </div>
+              </div>
               
               <div className="space-y-3">
                 <a 

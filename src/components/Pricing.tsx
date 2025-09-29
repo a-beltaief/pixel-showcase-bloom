@@ -3,55 +3,76 @@ import { Check, MessageCircle, Mail } from "lucide-react";
 export const Pricing = () => {
   const packages = [
     {
-      name: "BASIC",
-      price: "50€/Monat",
+      name: "Basic Website",
+      price: "50€",
+      period: "pro Monat",
+      description: "Perfekt für kleine Unternehmen",
       features: [
-        "5 Seiten",
-        "Mobile + SSL"
+        "5 Seiten inklusive",
+        "Responsive Design (Mobile & Desktop)",
+        "SEO-Grundoptimierung",
+        "SSL-Zertifikat inklusive",
+        "DSGVO-konform",
+        "Hosting inklusive",
+        "E-Mail-Support"
       ],
-      ctaText: "Jetzt starten",
-      ctaLink: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Basic-Paket!"
+      cta: "Basic wählen",
+      popular: false
     },
     {
-      name: "PREMIUM",
-      price: "80€/Monat",
+      name: "Premium Website",
+      price: "80€",
+      period: "pro Monat",
+      description: "Für wachsende Unternehmen",
       features: [
-        "10 Seiten",
-        "+ API/Datenbank"
+        "10 Seiten inklusive",
+        "Alles aus Basic +",
+        "API-Integration",
+        "Datenbank-Anbindung",
+        "Analytics Dashboard",
+        "WhatsApp-Support",
+        "Monatlich 2h Änderungen"
       ],
-      popular: true,
-      ctaText: "Jetzt starten",
-      ctaLink: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Premium-Paket!"
+      cta: "Premium wählen",
+      popular: true
     },
     {
-      name: "ENTERPRISE",
-      price: "Individuell",
+      name: "Enterprise",
+      price: "Individual",
+      period: "Angebot",
+      description: "Für komplexe Projekte",
       features: [
-        "Unbegrenzt",
-        "Alles möglich"
+        "Unbegrenzte Seiten",
+        "Alles aus Premium +",
+        "Custom Development",
+        "API-Entwicklung",
+        "Prioritäts-Support",
+        "Dedicated Account Manager",
+        "SLA-Garantie"
       ],
-      ctaText: "Kontakt",
-      ctaLink: "mailto:haris@princeberg.com?subject=Enterprise%20Anfrage"
+      cta: "Angebot anfragen",
+      popular: false
     }
   ];
 
   return (
-    <section id="pricing" className="py-16 px-6 bg-background-secondary">
+    <section className="py-16 px-6 bg-background-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Pakete
           </h2>
+          <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
+            Transparent, fair und ohne versteckte Kosten
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <div 
               key={index} 
-              className={`bg-card rounded-xl p-6 border relative ${
-                pkg.popular 
-                  ? 'border-primary ring-2 ring-primary/20' 
-                  : 'border-card-border'
+              className={`bg-card rounded-xl p-8 border border-card-border relative ${
+                pkg.popular ? 'border-primary shadow-lg' : ''
               }`}
             >
               {pkg.popular && (
@@ -62,39 +83,46 @@ export const Pricing = () => {
                 </div>
               )}
               
-              <div className="text-center">
+              <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-primary mb-2">{pkg.name}</h3>
-                <div className="mb-4">
-                  <span className="text-2xl font-bold text-foreground">{pkg.price}</span>
+                <div className="mb-2">
+                  <span className="text-3xl font-bold">{pkg.price}</span>
+                  <span className="text-foreground-muted ml-1">{pkg.period}</span>
                 </div>
-                
-                <ul className="space-y-2 mb-6">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="text-foreground text-sm">
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <a 
-                  href={pkg.ctaLink}
-                  target={pkg.ctaLink.startsWith('mailto:') ? '_self' : '_blank'}
-                  rel={pkg.ctaLink.startsWith('mailto:') ? '' : 'noopener noreferrer'}
-                  className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors ${
-                    pkg.popular
-                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover'
-                      : 'border border-primary text-primary hover:bg-primary/10'
-                  }`}
-                >
-                  {pkg.ctaText}
-                </a>
+                <p className="text-foreground-muted text-sm">{pkg.description}</p>
               </div>
+
+              <ul className="space-y-3 mb-8">
+                {pkg.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    </div>
+                    <span className="text-sm text-foreground-secondary">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button 
+                className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                  pkg.popular 
+                    ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
+                    : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
+                }`}
+              >
+                {pkg.cta}
+              </button>
             </div>
           ))}
         </div>
 
-        <div className="text-center text-sm text-foreground-muted">
-          <p>*Alle Preise inkl. Hosting. Monatlich kündbar.</p>
+        <div className="text-center mt-12 space-y-4">
+          <p className="text-foreground-muted">
+            Alle Preise inkl. Hosting, SSL-Zertifikat und DSGVO-Compliance
+          </p>
+          <p className="text-foreground-muted text-sm">
+            ✓ Monatlich kündbar ✓ Keine Setup-Kosten ✓ 30 Tage Geld-zurück-Garantie
+          </p>
         </div>
       </div>
     </section>

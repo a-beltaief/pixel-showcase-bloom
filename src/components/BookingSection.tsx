@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import princebergCards from "@/assets/princeberg-cards.png";
 
 export const BookingSection = () => {
   const [formData, setFormData] = useState({
@@ -118,6 +119,13 @@ Nachricht: ${formData.message}`;
           </div>
 
           <div className="bg-card rounded-xl p-8 border border-card-border">
+            <div className="text-center mb-6">
+              <img 
+                src={princebergCards} 
+                alt="PRINCEBERG Cards" 
+                className="w-48 h-auto mx-auto rounded-lg"
+              />
+            </div>
             <h3 className="text-xl font-bold mb-4 text-primary">Oder direkt via WhatsApp</h3>
             <p className="text-foreground-muted mb-6">
               Für schnelle Fragen oder wenn Sie lieber direkt sprechen möchten:
