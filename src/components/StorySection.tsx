@@ -12,7 +12,7 @@ export const StorySection = () => {
     },
     {
       title: "Zwei Experten statt zehn Mitläufer",
-      description: "Kein Project Manager, der nicht codet. Kein Account Manager, der Mails weiterleitet. Kein Junior, der lernt. Nur Haris und Abderrahmen – direkt, kompetent, effizient."
+      description: "Kein Project Manager, der nicht codet. Kein Account Manager, der Mails weiterleitet. Kein Junior, der lernt. Nur Haris und Abderrahmen – direkt, kompetent und effizient."
     },
     {
       title: "Studenten-Vorteil nutzen",
