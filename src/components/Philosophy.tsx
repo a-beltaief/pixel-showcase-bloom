@@ -2,16 +2,16 @@ import { Check } from "lucide-react";
 
 export const Philosophy = () => {
   const points = [
-    "Jede Zeile selbst geschrieben",
-    "Verstehen, was Kunden wirklich brauchen",
-    "Persönlicher Support via Direktkontakt"
+    "Keine Investoren, keine Kompromisse",
+    "Direkte Kommunikation statt Meeting-Marathon",
+    "Faire Preise durch schlanke Struktur"
   ];
 
   return (
     <section className="py-12 px-6 bg-background-secondary">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          Warum wir keine KI verwenden:
+          Warum wir anders arbeiten:
         </h2>
         
         <div className="space-y-6">
