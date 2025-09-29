@@ -17,23 +17,36 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-6">
-            <span className="block font-light text-foreground-muted">Webdesign</span>
-            <span className="block text-gradient">Portfolio</span>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-8">
+            <span className="block text-2xl md:text-3xl font-normal text-foreground-muted mb-4">PRINCEBERG</span>
+            <span className="block font-light text-foreground-muted">Zwei AI-Experten, die</span>
+            <span className="block text-gradient">Ihre Website von Hand crafted</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto leading-relaxed mb-12">
-            Moderne Webseiten, die begeistern und konvertieren. 
-            Entdecken Sie einzigartige digitale Erlebnisse mit 
-            <span className="text-accent font-medium"> perfekter Balance aus Design und Funktionalität</span>.
-          </p>
+          <div className="text-xl md:text-2xl text-foreground-muted max-w-4xl mx-auto leading-relaxed mb-8 space-y-4">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground">
+              Wir könnten KI nutzen. Stattdessen investieren wir unser Herzblut.
+            </p>
+            <p>
+              <strong className="text-foreground">Wir sind Haris und Abderrahmen</strong> – zwei AI-Studenten an der JKU Linz, 
+              die täglich mit künstlicher Intelligenz arbeiten. Und genau deshalb wissen wir:{" "}
+              <span className="text-accent font-semibold">Ihre Website verdient mehr als einen Algorithmus.</span>
+            </p>
+            <p>
+              Während alle auf den KI-Zug aufspringen, gehen wir den anderen Weg: 
+              <span className="font-semibold text-foreground"> Echte Handarbeit. Echte Expertise. Echte Resultate.</span>
+            </p>
+            <p className="text-lg italic">
+              Ja, wir werden Sie anrufen. Weil WhatsApp-Nachrichten keine Visionen transportieren.
+            </p>
+          </div>
 
           <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <button 
               className="btn-hero group"
-              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Projekte ansehen
+              Unsere Geschichte erfahren
               <span className="inline-block ml-2 transform transition-transform group-hover:translate-x-1">→</span>
             </button>
             
@@ -41,7 +54,7 @@ export const Hero = () => {
               className="btn-ghost group"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Kontakt aufnehmen
+              Direkt durchstarten
               <span className="inline-block ml-2 transform transition-transform group-hover:translate-x-1">↗</span>
             </button>
           </div>
