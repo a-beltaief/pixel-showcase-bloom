@@ -7,17 +7,17 @@ export const Hero = () => {
       <div className="absolute inset-0 opacity-20">
         <PixelBlast
           variant="circle"
-          pixelSize={4}
+          pixelSize={6}
           color="#0066FF"
-          patternScale={2.5}
-          patternDensity={1.1}
-          pixelSizeJitter={0.3}
+          patternScale={2.0}
+          patternDensity={1.5}
+          pixelSizeJitter={0.4}
           enableRipples={true}
           rippleSpeed={0.3}
           rippleThickness={0.08}
           rippleIntensityScale={1.2}
           speed={0.4}
-          edgeFade={0.3}
+          edgeFade={0.2}
           transparent={true}
         />
       </div>
