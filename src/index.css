@@ -8,30 +8,30 @@
 
 @layer base {
   :root {
-    /* Minimalist Color System - Clean & Professional */
+    /* Light & Clean Color System */
     --background: 0 0% 100%;
     --background-secondary: 0 0% 98%;
-    --foreground: 0 0% 5%;
-    --foreground-muted: 0 0% 40%;
+    --foreground: 0 0% 8%;
+    --foreground-muted: 0 0% 50%;
 
-    /* Card System - Minimal */
+    /* Card System - Light */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
-    --card-border: 0 0% 90%;
+    --card-foreground: 0 0% 8%;
+    --card-border: 0 0% 88%;
 
-    /* Primary Brand - Warm Blue */
+    /* Primary Brand - Blue */
     --primary: 216 100% 50%;
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 100%;
     --primary-hover: 216 100% 45%;
 
-    /* Accent - Warm Blue Variations */
+    /* Accent - Blue Variations */
     --accent: 216 100% 50%;
-    --accent-foreground: 0 0% 98%;
-    --accent-muted: 216 100% 95%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 216 50% 95%;
 
     /* Interactive States */
-    --hover: 240 5% 96%;
-    --active: 240 6% 90%;
+    --hover: 216 50% 96%;
+    --active: 216 50% 90%;
 
     /* Shadows & Effects */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -43,7 +43,7 @@
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--background-secondary)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(217 42% 64%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

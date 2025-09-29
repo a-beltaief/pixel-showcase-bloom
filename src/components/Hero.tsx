@@ -1,16 +1,26 @@
+import PixelBlast from "./PixelBlast";
+
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* PixelBlast Background Effect */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: `radial-gradient(circle at 50% 30%, hsl(216, 100%, 80%) 0%, transparent 50%),
-                      radial-gradient(circle at 20% 70%, hsl(216, 100%, 60%) 0%, transparent 30%),
-                      radial-gradient(circle at 80% 20%, hsl(216, 100%, 70%) 0%, transparent 40%)`,
-          filter: 'blur(40px)'
-        }}
-      />
+      <div className="absolute inset-0 opacity-20">
+        <PixelBlast
+          variant="circle"
+          pixelSize={4}
+          color="#0066FF"
+          patternScale={2.5}
+          patternDensity={1.1}
+          pixelSizeJitter={0.3}
+          enableRipples={true}
+          rippleSpeed={0.3}
+          rippleThickness={0.08}
+          rippleIntensityScale={1.2}
+          speed={0.4}
+          edgeFade={0.3}
+          transparent={true}
+        />
+      </div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-primary">
