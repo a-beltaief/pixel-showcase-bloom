@@ -18,7 +18,7 @@ export const Hero = () => {
           chromaticAberration={0}
           dither={0}
           curvature={0}
-          tint="#00ff00"
+          tint="#ffffff"
           mouseReact={true}
           mouseStrength={0.5}
           pageLoadAnimation={false}
