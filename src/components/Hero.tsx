@@ -10,11 +10,9 @@ export const Hero = () => {
           disableAnimation={false}
           enableMouseInteraction={true}
           mouseRadius={0.3}
-          colorNum={4}
           waveAmplitude={0.25}
           waveFrequency={2.5}
           waveSpeed={0.03}
-          pixelSize={3}
         />
       </div>
       
