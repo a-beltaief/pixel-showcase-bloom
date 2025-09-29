@@ -1,5 +1,6 @@
 import harisPortrait from '@/assets/haris-portrait.jpg';
 import abderrahmenPortrait from '@/assets/abderrahmen-portrait.jpg';
+import { Linkedin } from 'lucide-react';
 
 export const Founders = () => {
   return (
@@ -20,14 +21,25 @@ export const Founders = () => {
               <p className="text-lg text-foreground-muted mb-6">
                 Developer
               </p>
-              <a 
-                href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20brauche%20eine%20Website!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-              >
-                WhatsApp: +43 670 405 5549
-              </a>
+              <div className="space-y-3">
+                <a 
+                  href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20brauche%20eine%20Website!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                >
+                  WhatsApp: +43 670 405 5549
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/muranovic/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors ml-3"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
 
@@ -45,14 +57,25 @@ export const Founders = () => {
               <p className="text-lg text-foreground-muted mb-6">
                 Designer
               </p>
-              <a 
-                href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20brauche%20eine%20Website!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-              >
-                WhatsApp: +43 676 400 2129
-              </a>
+              <div className="space-y-3">
+                <a 
+                  href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20brauche%20eine%20Website!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                >
+                  WhatsApp: +43 676 400 2129
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/abeltaief/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors ml-3"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
