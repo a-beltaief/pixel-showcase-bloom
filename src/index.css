@@ -19,12 +19,12 @@
     --card-foreground: 0 0% 5%;
     --card-border: 0 0% 90%;
 
-    /* Primary Brand - Clean Black */
-    --primary: 0 0% 5%;
+    /* Primary Brand - Warm Blue */
+    --primary: 216 100% 50%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 0 0% 15%;
+    --primary-hover: 216 100% 45%;
 
-    /* Accent - Single Blue */
+    /* Accent - Warm Blue Variations */
     --accent: 216 100% 50%;
     --accent-foreground: 0 0% 98%;
     --accent-muted: 216 100% 95%;
@@ -156,6 +156,15 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  /* Testimonial scroll animation */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
   /* Interactive Elements */
   .portfolio-card {
     @apply relative overflow-hidden rounded-3xl bg-card border border-card-border;
@@ -265,5 +274,14 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

@@ -3,7 +3,7 @@ import abderrahmenPortrait from '@/assets/abderrahmen-portrait.png';
 
 export const Founders = () => {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section className="py-12 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Haris */}
@@ -18,7 +18,7 @@ export const Founders = () => {
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2">Haris Muranovic</h3>
               <p className="text-lg text-foreground-muted mb-6">
-                Frontend & UX-Spezialist
+                Developer
               </p>
               <a 
                 href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20brauche%20eine%20Website!"
@@ -43,7 +43,7 @@ export const Founders = () => {
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2">Abderrahmen Beltaief</h3>
               <p className="text-lg text-foreground-muted mb-6">
-                Backend & Strategie
+                Designer
               </p>
               <a 
                 href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20brauche%20eine%20Website!"

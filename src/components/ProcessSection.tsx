@@ -1,9 +1,9 @@
 export const ProcessSection = () => {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section className="py-12 px-6 bg-background">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-16">
-          Tag 1 → Tag 14: Vom Gespräch zur fertigen Website
+        <h2 className="text-3xl font-bold mb-10">
+          In 14 Tagen online
         </h2>
         
         <div className="relative">
