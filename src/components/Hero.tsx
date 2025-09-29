@@ -28,8 +28,12 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-primary mb-6">
-          Das System, das Websites revolutioniert
+          All-in System. All-in Service. Deine Website in 14 Tagen.
         </h2>
+        
+        <div className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 inline-block">
+          Website nach 14 Tage noch immer nicht geliefert? 100% Stornierung ohne wenn und aber
+        </div>
         
         <p className="text-xl md:text-2xl text-foreground mb-4">
           <strong>Von der JKU zum Startup</strong> - seit Mai 2025 am Markt

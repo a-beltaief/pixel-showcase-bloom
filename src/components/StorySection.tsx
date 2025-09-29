@@ -5,7 +5,7 @@ export const StorySection = () => {
     {
       year: "2024",
       title: "Die Idee",
-      description: "An der JKU entwickeln wir ein revolutionäres System für effiziente Web-Entwicklung - ohne Qualitätsverlust."
+      description: "In einem Uni-Projekt entwickeln wir ein revolutionäres System für effiziente Web-Entwicklung - ohne Qualitätsverlust."
     },
     {
       year: "Mai 2025",

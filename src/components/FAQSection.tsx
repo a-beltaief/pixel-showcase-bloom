@@ -20,7 +20,7 @@ export const FAQSection = () => {
     {
       id: "system",
       question: "Was ist dieses System genau?",
-      answer: "Unser eigenes Entwicklungs-System, entstanden aus jahrelanger Forschung an der JKU. Stellen Sie sich hochwertige LEGO-Bausteine für Websites vor: Getestete Premium-Module, die wir individuell für Sie zusammensetzen. Das Ergebnis: Maßgeschneiderte Qualität in 14 Tagen statt 8 Wochen - ohne Abstriche, nur ohne Zeitverschwendung."
+      answer: "Unser eigenes Entwicklungs-System, entstanden aus jahrelanger Forschung im Uni-Projekt. Getestete Premium-Module, die wir individuell für Sie zusammensetzen. Das Ergebnis: Maßgeschneiderte Qualität in 14 Tagen statt 8 Wochen - ohne Abstriche, nur ohne Zeitverschwendung."
     },
     {
       id: "cancellation",

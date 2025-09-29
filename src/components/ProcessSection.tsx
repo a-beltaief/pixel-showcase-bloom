@@ -25,7 +25,7 @@ export const ProcessSection = () => {
             Warum wir in 14 Tagen schaffen, wofür andere 8 Wochen brauchen
           </h3>
           <p className="text-lg text-foreground-muted">
-            Unser an der JKU entwickeltes System macht's möglich:
+            Unser im Uni-Projekt entwickeltes System macht's möglich:
           </p>
         </div>
 
