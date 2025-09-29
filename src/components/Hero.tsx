@@ -2,7 +2,7 @@ import PixelBlast from "./PixelBlast";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
+    <section className="relative py-20 md:py-32 flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* PixelBlast Background Effect */}
       <div className="absolute inset-0 opacity-20">
         <PixelBlast
