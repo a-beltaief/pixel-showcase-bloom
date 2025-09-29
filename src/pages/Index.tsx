@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Philosophy } from "@/components/Philosophy";
 import { Founders } from "@/components/Founders";
 import { WhatYouGet } from "@/components/WhatYouGet";
-
+import { Timeline } from "@/components/Timeline";
 import { Pricing } from "@/components/Pricing";
 import { ProcessSection } from "@/components/ProcessSection";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
@@ -20,7 +20,7 @@ const Index = () => {
         <Philosophy />
         <Founders />
         <WhatYouGet />
-        
+        <Timeline />
         <Pricing />
         <ProcessSection />
         <PortfolioGrid />
