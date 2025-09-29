@@ -1,16 +1,16 @@
 export const ProcessSection = () => {
   const features = [
     {
-      title: "Vorgefertigte Module",
-      description: "Bewährte Komponenten, sofort einsetzbar"
+      title: "Modulare Architektur",
+      description: "Vorgefertigte Premium-Bausteine, die wir blitzschnell zu Ihrer Website zusammensetzen"
     },
     {
-      title: "Automatisierte Prozesse", 
-      description: "Was sonst Tage dauert, läuft in Stunden"
+      title: "Optimierte Workflows", 
+      description: "Unser System automatisiert Routine-Aufgaben - wir fokussieren uns auf Ihre individuelle Lösung"
     },
     {
-      title: "Direkte Umsetzung",
-      description: "Keine Meetings, keine Warteschleifen"
+      title: "Qualität durch Standards",
+      description: "Jeder Baustein ist vielfach getestet und optimiert - keine Experimente auf Ihre Kosten"
     }
   ];
 
@@ -19,13 +19,13 @@ export const ProcessSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Das Framework
+            Das PRINCEBERG-System
           </h2>
           <h3 className="text-2xl text-foreground-muted mb-8">
-            Warum 14 Tage reichen
+            Warum wir in 14 Tagen schaffen, wofür andere 8 Wochen brauchen
           </h3>
           <p className="text-lg text-foreground-muted">
-            Unser selbst entwickeltes Framework macht's möglich:
+            Unser an der JKU entwickeltes System macht's möglich:
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const ProcessSection = () => {
 
         <div className="bg-card rounded-xl p-8 border border-card-border text-center">
           <p className="text-xl font-semibold text-primary">
-            Resultat: Höchste Qualität in Rekordzeit.
+            Resultat: Spitzenqualität in Rekordzeit zum fairen Preis.
           </p>
         </div>
       </div>

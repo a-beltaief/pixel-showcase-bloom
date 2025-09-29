@@ -5,17 +5,17 @@ export const StorySection = () => {
     {
       year: "2024",
       title: "Die Idee",
-      description: "An der JKU entwickeln wir ein Framework für effiziente Web-Entwicklung."
+      description: "An der JKU entwickeln wir ein revolutionäres System für effiziente Web-Entwicklung - ohne Qualitätsverlust."
     },
     {
       year: "Mai 2025",
       title: "Das Spinoff",
-      description: "Aus dem Projekt wird PRINCEBERG. Erste Kunden sind begeistert."
+      description: "Aus dem Uni-Projekt wird PRINCEBERG. Unser System bewährt sich bei ersten Kunden."
     },
     {
       year: "Heute",
       title: "Ihre Chance",
-      description: "Unser Framework ermöglicht Premium-Websites zum Bruchteil der üblichen Kosten."
+      description: "Unser System ermöglicht Premium-Websites zum Bruchteil der üblichen Kosten - in nur 14 Tagen."
     }
   ];
 

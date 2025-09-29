@@ -28,7 +28,7 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-primary mb-6">
-          Das Framework, das Websites revolutioniert
+          Das System, das Websites revolutioniert
         </h2>
         
         <p className="text-xl md:text-2xl text-foreground mb-4">
@@ -36,7 +36,7 @@ export const Hero = () => {
         </p>
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Ein Framework. 14 Tage. Ab 50€/Monat.
+          Unser System. 14 Tage. Ab 50€/Monat.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">

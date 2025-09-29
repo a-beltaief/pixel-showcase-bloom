@@ -8,7 +8,7 @@ export const WhySection = () => {
     {
       number: "2", 
       title: "Bewährt",
-      description: "Framework seit Mai 2025 im Einsatz, bereits 20+ zufriedene Kunden"
+      description: "Unser System seit Mai 2025 erfolgreich im Einsatz, bereits 20+ begeisterte Kunden"
     },
     {
       number: "3",

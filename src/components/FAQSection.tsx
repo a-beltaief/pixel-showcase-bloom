@@ -5,12 +5,12 @@ export const FAQSection = () => {
     {
       id: "cost",
       question: "Wie kann das nur 50€/Monat kosten?",
-      answer: "Unser selbst entwickeltes Framework automatisiert 70% der Arbeit. Wir haben keine Bürokosten (arbeiten von der WG), keine Investoren (die Rendite wollen) und kein aufgeblähtes Team. Diese Ersparnisse geben wir direkt an Sie weiter."
+      answer: "Unser selbst entwickeltes System automatisiert 70% der Arbeit. Wir haben keine Bürokosten (arbeiten von der WG), keine Investoren (die Rendite wollen) und kein aufgeblähtes Team. Diese Ersparnisse geben wir direkt an Sie weiter."
     },
     {
       id: "timeline", 
       question: "Ist die Website wirklich in 14 Tagen fertig?",
-      answer: "Ja, garantiert. Unser Framework macht's möglich. Tag 1-2: Konzept, Tag 3-7: Design, Tag 8-13: Entwicklung, Tag 14: Launch. Wenn wir's nicht schaffen, ist der erste Monat kostenlos."
+      answer: "Ja, garantiert. Unser System macht's möglich. Tag 1-2: Konzept, Tag 3-7: Design, Tag 8-13: Entwicklung, Tag 14: Launch. Wenn wir's nicht schaffen, ist der erste Monat kostenlos."
     },
     {
       id: "included",
@@ -18,9 +18,9 @@ export const FAQSection = () => {
       answer: "Alles. Hosting, Domain-Verwaltung, SSL-Zertifikat, E-Mail-Setup, DSGVO-konform, Cookie-Banner, Mobile-Optimierung, SEO-Grundlagen. Keine versteckten Kosten, keine Setup-Gebühren."
     },
     {
-      id: "framework",
-      question: "Was ist dieses Framework genau?",
-      answer: "Unser eigenes Code-System, entwickelt an der JKU. Stellen Sie sich LEGO-Bausteine für Websites vor: Vorgefertigte, getestete Module, die wir nur noch zusammensetzen und anpassen müssen."
+      id: "system",
+      question: "Was ist dieses System genau?",
+      answer: "Unser eigenes Entwicklungs-System, entstanden aus jahrelanger Forschung an der JKU. Stellen Sie sich hochwertige LEGO-Bausteine für Websites vor: Getestete Premium-Module, die wir individuell für Sie zusammensetzen. Das Ergebnis: Maßgeschneiderte Qualität in 14 Tagen statt 8 Wochen - ohne Abstriche, nur ohne Zeitverschwendung."
     },
     {
       id: "cancellation",
