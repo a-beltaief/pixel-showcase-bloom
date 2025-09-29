@@ -1,5 +1,5 @@
-import harisPortrait from '@/assets/haris-portrait.png';
-import abderrahmenPortrait from '@/assets/abderrahmen-portrait.png';
+import harisPortrait from '@/assets/haris-portrait.jpg';
+import abderrahmenPortrait from '@/assets/abderrahmen-portrait.jpg';
 
 export const Founders = () => {
   return (
