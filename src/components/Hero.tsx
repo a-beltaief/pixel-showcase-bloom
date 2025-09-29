@@ -1,24 +1,24 @@
-import PixelBlast from "./PixelBlast";
+import FaultyTerminal from "./FaultyTerminal";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* PixelBlast Background Effect */}
       <div className="absolute inset-0 opacity-20">
-        <PixelBlast
-          variant="circle"
-          pixelSize={6}
-          color="#0066FF"
-          patternScale={2.0}
-          patternDensity={1.5}
-          pixelSizeJitter={0.4}
-          enableRipples={true}
-          rippleSpeed={0.3}
-          rippleThickness={0.08}
-          rippleIntensityScale={1.2}
-          speed={0.4}
-          edgeFade={0.2}
-          transparent={true}
+        <FaultyTerminal
+          scale={1.5}
+          gridMul={[2, 1]}
+          digitSize={1.2}
+          timeScale={0.5}
+          scanlineIntensity={0.8}
+          glitchAmount={0.5}
+          flickerAmount={0.7}
+          noiseAmp={0.8}
+          tint="#0066FF"
+          mouseReact={true}
+          mouseStrength={0.3}
+          pageLoadAnimation={false}
+          brightness={0.6}
         />
       </div>
       
