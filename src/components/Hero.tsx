@@ -6,22 +6,22 @@ export const Hero = () => {
       {/* FaultyTerminal Background Effect */}
       <div className="absolute inset-0">
         <FaultyTerminal
-          scale={1.5}
+          scale={1}
           gridMul={[2, 1]}
-          digitSize={1.2}
-          timeScale={1}
+          digitSize={1.5}
+          timeScale={0.3}
           pause={false}
-          scanlineIntensity={1}
+          scanlineIntensity={0.3}
           glitchAmount={1}
           flickerAmount={1}
           noiseAmp={1}
           chromaticAberration={0}
           dither={0}
-          curvature={0}
+          curvature={0.2}
           tint="#ffffff"
           mouseReact={true}
-          mouseStrength={0.5}
-          pageLoadAnimation={false}
+          mouseStrength={0.2}
+          pageLoadAnimation={true}
           brightness={1}
         />
       </div>
