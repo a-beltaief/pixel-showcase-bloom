@@ -3,22 +3,22 @@ import FaultyTerminal from "./FaultyTerminal";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
-      {/* PixelBlast Background Effect */}
-      <div className="absolute inset-0 opacity-20">
+      {/* FaultyTerminal Background Effect */}
+      <div className="absolute inset-0 opacity-30">
         <FaultyTerminal
-          scale={1.5}
-          gridMul={[2, 1]}
-          digitSize={1.2}
-          timeScale={0.5}
-          scanlineIntensity={0.8}
-          glitchAmount={0.5}
-          flickerAmount={0.7}
-          noiseAmp={0.8}
-          tint="#0066FF"
+          scale={2.0}
+          gridMul={[3, 2]}
+          digitSize={0.8}
+          timeScale={0.3}
+          scanlineIntensity={0.5}
+          glitchAmount={0.3}
+          flickerAmount={0.4}
+          noiseAmp={0.6}
+          tint="#1E40AF"
           mouseReact={true}
-          mouseStrength={0.3}
+          mouseStrength={0.2}
           pageLoadAnimation={false}
-          brightness={0.6}
+          brightness={0.4}
         />
       </div>
       
