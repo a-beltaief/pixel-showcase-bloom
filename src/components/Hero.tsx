@@ -40,7 +40,7 @@ export const Hero = () => {
         </p>
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Unser System. 14 Tage. Ab 50€/Monat.
+          Wir machen. Du entspannst. Website läuft.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
