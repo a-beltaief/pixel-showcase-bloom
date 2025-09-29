@@ -2,7 +2,7 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "Studenten? Ist das seriös?",
-      answer: "Ja. Wir sind an der JKU, nicht auf YouTube. Gewerbeschein vorhanden, Rechnungen mit UID, alles legal und sauber. Bonus: Als Studenten sind wir hungrig nach Erfolg, nicht satt und träge."
+      answer: "Ja. Wir sind an der JKU, nicht auf YouTube. Gewerbeschein vorhanden,... . Bonus: Als Studenten sind wir hungrig nach Erfolg, nicht satt und träge."
     },
     {
       question: "14 Tage klingt unrealistisch",
