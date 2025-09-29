@@ -34,15 +34,15 @@ export const Founders = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {founders.map((founder, index) => (
             <div key={index} className="bg-card rounded-xl p-6 border border-card-border">
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-6 mb-6">
                 <img 
                   src={founder.image} 
                   alt={founder.name}
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="w-24 h-24 rounded-full object-cover"
                 />
                 <div>
                   <h3 className="text-xl font-bold text-primary">{founder.name}</h3>
-                  <p className="text-foreground-muted">{founder.role}</p>
+                  <p className="text-muted-foreground">{founder.role}</p>
                 </div>
               </div>
               
