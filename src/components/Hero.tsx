@@ -1,11 +1,21 @@
-import DitherEffect from "./DitherEffect";
+import Dither from "./Dither";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* Dither Background Effect */}
       <div className="absolute inset-0 opacity-25">
-        <DitherEffect />
+        <Dither
+          waveColor={[0.2, 0.4, 1.0]}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.3}
+          colorNum={4}
+          waveAmplitude={0.25}
+          waveFrequency={2.5}
+          waveSpeed={0.03}
+          pixelSize={3}
+        />
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
