@@ -104,31 +104,63 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="text-center text-foreground-muted">
-          <p className="mb-4">Alle Pakete inklusive Hosting, SSL, Support</p>
-          
-          <div className="bg-card rounded-xl p-6 border border-card-border max-w-md mx-auto">
-            <h4 className="font-semibold mb-3">Kontakt für Enterprise:</h4>
-            <div className="space-y-2">
-              <p className="font-medium">Haris Muranovic (Developer)</p>
-              <div className="flex items-center justify-center gap-4 text-sm">
-                <a 
-                  href="mailto:haris@princeberg.com" 
-                  className="flex items-center gap-1 text-primary hover:underline"
-                >
-                  <Mail className="w-4 h-4" />
-                  haris@princeberg.com
-                </a>
-                <a 
-                  href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20habe%20eine%20Enterprise-Anfrage" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-primary hover:underline"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  +43 670 405 5549
-                </a>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Left Side - Package Info */}
+          <div className="text-center text-foreground-muted">
+            <p className="mb-4">Alle Pakete inklusive Hosting, SSL, Support</p>
+            
+            <div className="bg-card rounded-xl p-6 border border-card-border">
+              <h4 className="font-semibold mb-3">Kontakt für Enterprise:</h4>
+              <div className="space-y-2">
+                <p className="font-medium">Haris Muranovic (Developer)</p>
+                <div className="flex items-center justify-center gap-4 text-sm">
+                  <a 
+                    href="mailto:haris@princeberg.com" 
+                    className="flex items-center gap-1 text-primary hover:underline"
+                  >
+                    <Mail className="w-4 h-4" />
+                    haris@princeberg.com
+                  </a>
+                  <a 
+                    href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20habe%20eine%20Enterprise-Anfrage" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-primary hover:underline"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    +43 670 405 5549
+                  </a>
+                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right Side - Storytelling */}
+          <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
+            <h4 className="font-bold text-lg mb-4 text-primary">Warum so günstig? Versteckte Kosten?</h4>
+            <div className="space-y-3 text-sm text-foreground-muted">
+              <p className="font-semibold text-foreground">❌ <strong>Nein!</strong> Wir arbeiten anders:</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span><strong>Effizient:</strong> Moderne Tools, bewährte Prozesse</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span><strong>Unabhängig:</strong> Keine Investoren, denen wir Rendite schulden</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span><strong>Fair:</strong> Transparente Preise, keine versteckten Kosten</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span><strong>Qualität:</strong> JKU-Studenten mit Leidenschaft für Perfektion</span>
+                </li>
+              </ul>
+              <p className="pt-2 font-medium text-foreground">
+                <em>Unser Ziel: Hochwertige Websites zu fairen Preisen. Punkt.</em>
+              </p>
             </div>
           </div>
         </div>

@@ -21,12 +21,12 @@ export const Founders = () => {
               <p className="text-lg text-foreground-muted mb-6">
                 Developer
               </p>
-              <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a 
                   href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20brauche%20eine%20Website!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity text-center"
                 >
                   WhatsApp: +43 670 405 5549
                 </a>
@@ -34,7 +34,7 @@ export const Founders = () => {
                   href="https://www.linkedin.com/in/muranovic/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors ml-3"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
@@ -57,12 +57,12 @@ export const Founders = () => {
               <p className="text-lg text-foreground-muted mb-6">
                 Designer
               </p>
-              <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a 
                   href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20brauche%20eine%20Website!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                  className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity text-center"
                 >
                   WhatsApp: +43 676 400 2129
                 </a>
@@ -70,7 +70,7 @@ export const Founders = () => {
                   href="https://www.linkedin.com/in/abeltaief/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors ml-3"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
