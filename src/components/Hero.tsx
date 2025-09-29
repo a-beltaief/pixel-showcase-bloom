@@ -1,24 +1,21 @@
 import PixelBlast from "./PixelBlast";
+import Dither from "./Dither";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
-      {/* PixelBlast Background Effect */}
-      <div className="absolute inset-0 opacity-20">
-        <PixelBlast
-          variant="circle"
-          pixelSize={4}
-          color="#0066FF"
-          patternScale={2.5}
-          patternDensity={1.1}
-          pixelSizeJitter={0.3}
-          enableRipples={true}
-          rippleSpeed={0.3}
-          rippleThickness={0.08}
-          rippleIntensityScale={1.2}
-          speed={0.4}
-          edgeFade={0.3}
-          transparent={true}
+      {/* Dither Background Effect */}
+      <div className="absolute inset-0 opacity-30">
+        <Dither
+          waveColor={[0.2, 0.4, 1.0]}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.3}
+          colorNum={4}
+          waveAmplitude={0.25}
+          waveFrequency={2.5}
+          waveSpeed={0.03}
+          pixelSize={3}
         />
       </div>
       
