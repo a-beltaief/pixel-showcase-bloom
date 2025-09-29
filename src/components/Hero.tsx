@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
       {/* FaultyTerminal Background Effect */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-50">
         <FaultyTerminal
           scale={2.0}
           gridMul={[3, 2]}
@@ -23,19 +23,19 @@ export const Hero = () => {
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-primary">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white drop-shadow-lg">
           PRINCEBERG
         </h1>
         
-        <h2 className="text-2xl md:text-3xl text-foreground-muted mb-6">
+        <h2 className="text-2xl md:text-3xl text-white/90 mb-6 drop-shadow-md">
           Handgefertigte Websites im Monatsabo
         </h2>
         
-        <p className="text-xl md:text-2xl text-foreground mb-3">
+        <p className="text-xl md:text-2xl text-white/95 mb-3 drop-shadow-md">
           <strong>Haris & Abderrahmen</strong> - JKU-Studenten
         </p>
         
-        <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
+        <p className="text-2xl md:text-3xl font-semibold text-white mb-8 drop-shadow-lg">
           Ab 50€/Monat. Alles inklusive.
         </p>
 
