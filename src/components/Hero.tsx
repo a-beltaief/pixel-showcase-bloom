@@ -27,36 +27,30 @@ export const Hero = () => {
           PRINCEBERG
         </h1>
         
-        <h2 className="text-2xl md:text-3xl text-foreground-muted mb-6">
-          Handgefertigte Websites im Monatsabo
+        <h2 className="text-2xl md:text-3xl text-primary mb-6">
+          Das Framework, das Websites revolutioniert
         </h2>
         
-        <p className="text-lg md:text-xl text-foreground mb-4">
-          <strong>Haris & Abderrahmen</strong> - JKU-Studenten mit einem simplen Plan:
-        </p>
-        
         <p className="text-xl md:text-2xl text-foreground mb-4">
-          Faire Preise. Echte Qualität. In 14 Tagen online.
+          <strong>Von der JKU zum Startup</strong> - seit Mai 2025 am Markt
         </p>
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Ab 50€/Monat. Kein Kleingedrucktes.
+          Ein Framework. 14 Tage. Ab 50€/Monat.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
-            href="#story"
+            href="/termine"
             className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-hover transition-colors"
           >
-            Unsere Story
+            Termin buchen
           </a>
           <a 
-            href="https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20eine%20Website!"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing"
             className="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors"
           >
-            Direkt starten
+            Pakete ansehen
           </a>
         </div>
       </div>

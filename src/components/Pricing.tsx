@@ -4,165 +4,97 @@ export const Pricing = () => {
   const packages = [
     {
       name: "BASIC",
-      price: "50€",
-      period: "/Monat",
+      price: "50€/Monat",
       features: [
-        "Bis zu 5 Seiten",
-        "Mobile-optimiert",
-        "SSL-Zertifikat",
-        "Hosting inklusive",
-        "E-Mail Support"
+        "5 Seiten",
+        "Mobile + SSL"
       ],
-      cta: "Paket wählen",
-      href: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Basic%20Paket%20(50€/Monat)"
+      ctaText: "Jetzt starten",
+      ctaLink: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Basic-Paket!"
     },
     {
       name: "PREMIUM",
-      price: "80€",
-      period: "/Monat",
+      price: "80€/Monat",
       features: [
-        "Alles aus Basic",
-        "Bis zu 10 Seiten",
-        "API-Anbindungen",
-        "Datenbank-Integration",
-        "WhatsApp-Support",
-        "Monatliche Updates"
+        "10 Seiten",
+        "+ API/Datenbank"
       ],
-      cta: "Paket wählen",
-      href: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Premium%20Paket%20(80€/Monat)",
-      popular: true
+      popular: true,
+      ctaText: "Jetzt starten",
+      ctaLink: "https://wa.me/436704055549?text=Hi,%20ich%20interessiere%20mich%20für%20das%20Premium-Paket!"
     },
     {
       name: "ENTERPRISE",
       price: "Individuell",
-      period: "",
       features: [
-        "Unbegrenzte Seiten",
-        "Custom-Lösungen",
-        "Prioritäts-Support",
-        "Dedizierte Betreuung"
+        "Unbegrenzt",
+        "Alles möglich"
       ],
-      cta: "Let's Talk →",
-      href: "mailto:haris@princeberg.com?subject=Enterprise%20Anfrage"
+      ctaText: "Kontakt",
+      ctaLink: "mailto:haris@princeberg.com?subject=Enterprise%20Anfrage"
     }
   ];
 
   return (
     <section id="pricing" className="py-16 px-6 bg-background-secondary">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4">Unsere Pakete</h2>
-          <p className="text-lg text-foreground-muted">Monatlich kündbar • In 14 Tagen online</p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Pakete
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {packages.map((pkg, index) => (
             <div 
               key={index} 
-              className={`bg-card rounded-2xl p-8 border ${
-                pkg.popular ? 'border-primary ring-2 ring-primary/20' : 'border-card-border'
-              } relative`}
+              className={`bg-card rounded-xl p-6 border relative ${
+                pkg.popular 
+                  ? 'border-primary ring-2 ring-primary/20' 
+                  : 'border-card-border'
+              }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                     Beliebt
                   </span>
                 </div>
               )}
               
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-primary mb-2">{pkg.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-primary">{pkg.price}</span>
-                  <span className="text-foreground-muted">{pkg.period}</span>
+                  <span className="text-2xl font-bold text-foreground">{pkg.price}</span>
                 </div>
+                
+                <ul className="space-y-2 mb-6">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="text-foreground text-sm">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <a 
+                  href={pkg.ctaLink}
+                  target={pkg.ctaLink.startsWith('mailto:') ? '_self' : '_blank'}
+                  rel={pkg.ctaLink.startsWith('mailto:') ? '' : 'noopener noreferrer'}
+                  className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors ${
+                    pkg.popular
+                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover'
+                      : 'border border-primary text-primary hover:bg-primary/10'
+                  }`}
+                >
+                  {pkg.ctaText}
+                </a>
               </div>
-
-              <div className="space-y-3 mb-8">
-                {pkg.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={pkg.href}
-                target={pkg.href.startsWith('mailto:') ? '_self' : '_blank'}
-                rel="noopener noreferrer"
-                className={`w-full py-3 px-6 rounded-lg font-semibold text-center transition-colors block ${
-                  pkg.popular
-                    ? 'bg-primary text-primary-foreground hover:bg-primary-hover'
-                    : 'border border-primary text-primary hover:bg-primary/10'
-                }`}
-              >
-                {pkg.cta}
-              </a>
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left Side - Package Info */}
-          <div className="text-center text-foreground-muted">
-            <p className="mb-4">Alle Pakete inklusive Hosting, SSL, Support</p>
-            
-            <div className="bg-card rounded-xl p-6 border border-card-border">
-              <h4 className="font-semibold mb-3">Kontakt für Enterprise:</h4>
-              <div className="space-y-2">
-                <p className="font-medium">Haris Muranovic (Developer)</p>
-                <div className="flex items-center justify-center gap-4 text-sm">
-                  <a 
-                    href="mailto:haris@princeberg.com" 
-                    className="flex items-center gap-1 text-primary hover:underline"
-                  >
-                    <Mail className="w-4 h-4" />
-                    haris@princeberg.com
-                  </a>
-                  <a 
-                    href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20habe%20eine%20Enterprise-Anfrage" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-primary hover:underline"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    +43 670 405 5549
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Storytelling */}
-          <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-            <h4 className="font-bold text-lg mb-4 text-primary">Warum so günstig? Versteckte Kosten?</h4>
-            <div className="space-y-3 text-sm text-foreground-muted">
-              <p className="font-semibold text-foreground">❌ <strong>Nein!</strong> Wir arbeiten anders:</p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>Effizient:</strong> Moderne Tools, bewährte Prozesse</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>Unabhängig:</strong> Keine Investoren, denen wir Rendite schulden</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>Fair:</strong> Transparente Preise, keine versteckten Kosten</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>Qualität:</strong> JKU-Studenten mit Leidenschaft für Perfektion</span>
-                </li>
-              </ul>
-              <p className="pt-2 font-medium text-foreground">
-                <em>Unser Ziel: Hochwertige Websites zu fairen Preisen. Punkt.</em>
-              </p>
-            </div>
-          </div>
+        <div className="text-center text-sm text-foreground-muted">
+          <p>*Alle Preise inkl. Hosting. Monatlich kündbar.</p>
         </div>
       </div>
     </section>
