@@ -1,10 +1,30 @@
 import FaultyTerminal from "./FaultyTerminal";
+import PillNav from "./PillNav";
 
 export const Hero = () => {
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Preise', href: '#pricing' },
+    { label: 'Kontakt', href: '#contact' }
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
+      {/* Navigation */}
+      <PillNav
+        logoText="PRINCEBERG"
+        items={navItems}
+        activeHref="/"
+        baseColor="#ffffff"
+        pillColor="#000000"
+        hoveredPillTextColor="#ffffff"
+        pillTextColor="#000000"
+        initialLoadAnimation={true}
+      />
+
       {/* FaultyTerminal Background Effect */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" style={{ opacity: 0.5 }}>
         <FaultyTerminal
           scale={1}
           gridMul={[2, 1]}
@@ -18,13 +38,16 @@ export const Hero = () => {
           chromaticAberration={0}
           dither={0}
           curvature={0.2}
-          tint="#ffffff"
+          tint="#0066FF"
           mouseReact={true}
           mouseStrength={0.2}
           pageLoadAnimation={true}
           brightness={1}
         />
       </div>
+
+      {/* Milky white overlay */}
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-blue-600" style={{ textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)' }}>
