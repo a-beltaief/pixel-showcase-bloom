@@ -28,7 +28,7 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-foreground-muted mb-6">
-          Professionelle Websites.
+          Handgefertigte Websites im Monatsabo
         </h2>
         
         <p className="text-lg md:text-xl text-foreground mb-4">
