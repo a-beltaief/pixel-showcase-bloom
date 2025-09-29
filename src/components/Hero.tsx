@@ -50,9 +50,12 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-blue-600" style={{ textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)' }}>
-          PRINCEBERG
-        </h1>
+        <div className="relative inline-block mb-6">
+          <div className="absolute inset-0 bg-white/30 rounded-full blur-xl transform scale-110"></div>
+          <h1 className="relative text-5xl md:text-7xl font-bold tracking-tight text-blue-600">
+            PRINCEBERG
+          </h1>
+        </div>
         
         <h2 className="text-2xl md:text-3xl text-white/90 mb-6 drop-shadow-md">
           Handgefertigte Websites im Monatsabo

@@ -39,21 +39,23 @@
   display: flex;
   align-items: center;
   height: var(--nav-h);
-  background: var(--base, #000);
+  background: #000000;
   border-radius: 9999px;
 }
 
 .pill-logo {
-  width: var(--nav-h);
+  width: auto;
+  min-width: var(--nav-h);
   height: var(--nav-h);
   border-radius: 50%;
-  background: var(--base, #000);
-  padding: 8px;
+  background: #000000;
+  padding: 4px 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-decoration: none;
+  margin-right: 6px;
 }
 
 .pill-logo img {
@@ -64,9 +66,9 @@
 }
 
 .pill-logo .logo-text {
-  color: var(--pill-bg, #fff);
+  color: #ffffff;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 11px;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -93,8 +95,8 @@
   justify-content: center;
   height: 100%;
   padding: 0 var(--pill-pad-x);
-  background: var(--pill-bg, #fff);
-  color: var(--pill-text, var(--base, #000));
+  background: #ffffff;
+  color: #000000;
   text-decoration: none;
   border-radius: 9999px;
   box-sizing: border-box;
@@ -114,7 +116,7 @@
   left: 50%;
   bottom: 0;
   border-radius: 50%;
-  background: var(--base, #000);
+  background: #000000;
   z-index: 1;
   display: block;
   pointer-events: none;
@@ -140,7 +142,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--hover-text, #fff);
+  color: #ffffff;
   z-index: 3;
   display: inline-block;
   will-change: transform, opacity;
@@ -154,7 +156,7 @@
   transform: translateX(-50%);
   width: 12px;
   height: 12px;
-  background: var(--base, #000);
+  background: #000000;
   border-radius: 50px;
   z-index: 4;
 }
@@ -181,7 +183,7 @@
   width: var(--nav-h);
   height: var(--nav-h);
   border-radius: 50%;
-  background: var(--base, #000);
+  background: #000000;
   border: none;
   display: none;
   flex-direction: column;
@@ -202,7 +204,7 @@
 .hamburger-line {
   width: 16px;
   height: 2px;
-  background: var(--pill-bg, #fff);
+  background: #ffffff;
   border-radius: 1px;
   transition: all 0.01s ease;
   transform-origin: center;
