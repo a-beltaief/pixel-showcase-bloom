@@ -1,0 +1,104 @@
+.dither-effect {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dither-layer {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.dither-layer-1 {
+  background: 
+    radial-gradient(circle at 20% 30%, hsl(216, 100%, 50%) 0%, transparent 40%),
+    radial-gradient(circle at 70% 80%, hsl(216, 100%, 60%) 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, hsl(216, 100%, 45%) 0%, transparent 45%);
+  animation: ditherMove1 8s ease-in-out infinite alternate;
+}
+
+.dither-layer-2 {
+  background: 
+    radial-gradient(circle at 60% 70%, hsl(216, 80%, 55%) 0%, transparent 30%),
+    radial-gradient(circle at 30% 40%, hsl(216, 90%, 50%) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, hsl(216, 100%, 65%) 0%, transparent 35%);
+  animation: ditherMove2 10s ease-in-out infinite alternate;
+}
+
+.dither-layer-3 {
+  background: 
+    radial-gradient(circle at 40% 20%, hsl(216, 70%, 60%) 0%, transparent 25%),
+    radial-gradient(circle at 80% 90%, hsl(216, 100%, 55%) 0%, transparent 30%),
+    radial-gradient(circle at 10% 80%, hsl(216, 85%, 50%) 0%, transparent 35%);
+  animation: ditherMove3 12s ease-in-out infinite alternate;
+}
+
+.dither-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, transparent 49%, hsl(216, 100%, 50%) 49%, hsl(216, 100%, 50%) 51%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, hsl(216, 100%, 60%) 49%, hsl(216, 100%, 60%) 51%, transparent 51%);
+  background-size: 4px 4px, 6px 6px;
+  background-position: 0 0, 2px 2px;
+  opacity: 0.1;
+  animation: ditherPattern 3s linear infinite;
+}
+
+@keyframes ditherMove1 {
+  0% { transform: translate(-5%, -5%) rotate(0deg) scale(1); }
+  50% { transform: translate(3%, 2%) rotate(1deg) scale(1.05); }
+  100% { transform: translate(-2%, 5%) rotate(-1deg) scale(0.98); }
+}
+
+@keyframes ditherMove2 {
+  0% { transform: translate(2%, 3%) rotate(1deg) scale(1.02); }
+  50% { transform: translate(-4%, -2%) rotate(-0.5deg) scale(0.95); }
+  100% { transform: translate(5%, -3%) rotate(1.5deg) scale(1.03); }
+}
+
+@keyframes ditherMove3 {
+  0% { transform: translate(-3%, 2%) rotate(-1deg) scale(0.98); }
+  50% { transform: translate(4%, -4%) rotate(0.5deg) scale(1.05); }
+  100% { transform: translate(-1%, 3%) rotate(-0.8deg) scale(1.01); }
+}
+
+@keyframes ditherPattern {
+  0% { background-position: 0 0, 2px 2px; }
+  25% { background-position: 1px 1px, 3px 3px; }
+  50% { background-position: 2px 2px, 4px 4px; }
+  75% { background-position: 1px 1px, 3px 3px; }
+  100% { background-position: 0 0, 2px 2px; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dither-overlay {
+    background-size: 3px 3px, 5px 5px;
+    opacity: 0.08;
+  }
+  
+  .dither-layer {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .dither-overlay {
+    background-size: 2px 2px, 4px 4px;
+    opacity: 0.06;
+  }
+  
+  .dither-layer {
+    opacity: 0.3;
+  }
+}
