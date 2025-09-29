@@ -10,7 +10,7 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { PortfolioGrid } from "@/components/PortfolioGrid";
 import { SuccessStories } from "@/components/SuccessStories";
 import { FAQSection } from "@/components/FAQSection";
-import { NewContact } from "@/components/NewContact";
+
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -30,7 +30,7 @@ const Index = () => {
         <PortfolioGrid />
         <SuccessStories />
         <FAQSection />
-        <NewContact />
+        
         <Contact />
         <Footer />
       </div>
