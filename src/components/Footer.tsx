@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className="py-12 px-6 bg-primary text-primary-foreground">
       <div className="max-w-4xl mx-auto text-center space-y-6">
-        <div className="text-2xl font-bold">PRINCEBERG © 2024</div>
+        <div className="text-2xl font-bold">PRINCEBERG © 2025</div>
         
         <div>
           <a href="mailto:info@princeberg.com" className="hover:underline">
