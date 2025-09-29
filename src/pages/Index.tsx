@@ -4,7 +4,6 @@ import { Philosophy } from "@/components/Philosophy";
 import { Founders } from "@/components/Founders";
 import { StorySection } from "@/components/StorySection";
 import { PriceTransparency } from "@/components/PriceTransparency";
-import { PhilosophySection } from "@/components/PhilosophySection";
 import { WhatYouGet } from "@/components/WhatYouGet";
 import { Pricing } from "@/components/Pricing";
 import { ProcessSection } from "@/components/ProcessSection";
@@ -25,7 +24,6 @@ const Index = () => {
         <Founders />
         <StorySection />
         <PriceTransparency />
-        <PhilosophySection />
         <WhatYouGet />
         <Pricing />
         <ProcessSection />
