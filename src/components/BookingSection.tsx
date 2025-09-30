@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import princebergCards from "@/assets/princeberg-cards.png";
+import sushiNight from "@/assets/sushi-night-2.png";
 
 export const BookingSection = () => {
   const [formData, setFormData] = useState({
@@ -121,8 +121,8 @@ Nachricht: ${formData.message}`;
           <div className="bg-card rounded-xl p-8 border border-card-border">
             <div className="text-center mb-6">
               <img 
-                src={princebergCards} 
-                alt="PRINCEBERG Cards" 
+                src={sushiNight} 
+                alt="Sushi Night - 2024" 
                 className="w-48 h-auto mx-auto rounded-lg"
               />
             </div>
