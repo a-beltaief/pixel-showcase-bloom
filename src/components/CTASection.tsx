@@ -1,4 +1,5 @@
 import { MessageCircle, Mail } from "lucide-react";
+import sushiNight from "@/assets/sushi-night.png";
 
 export const CTASection = () => {
   return (
@@ -10,9 +11,19 @@ export const CTASection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           <div className="bg-card rounded-xl p-8 border border-card-border">
-            <h3 className="text-xl font-bold mb-4 text-primary">Schnellstart:</h3>
+            <div className="flex items-center gap-4 mb-4">
+              <img 
+                src={sushiNight} 
+                alt="Haris beim Sushi-Abend 2024" 
+                className="w-16 h-16 rounded-full object-cover"
+              />
+              <div>
+                <h3 className="text-xl font-bold text-primary">Schnellstart:</h3>
+                <p className="text-sm text-foreground-muted">Oder direkt via WhatsApp</p>
+              </div>
+            </div>
             <p className="text-foreground-muted mb-6">
-              WhatsApp an Haris → Kurzes Gespräch → Start morgen
+              Für schnelle Fragen oder wenn Sie lieber direkt sprechen möchten:
             </p>
             <a
               href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20möchte%20schnell%20starten!"
@@ -21,7 +32,7 @@ export const CTASection = () => {
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
-              WhatsApp: +43 670 405 5549
+              +43 670 405 5549
             </a>
           </div>
 
