@@ -8,34 +8,30 @@
 
 @layer base {
   :root {
-    /* Base Colors - Sophisticated neutrals */
-    --background: 0 0% 99%;
-    --background-secondary: 240 5% 96%;
-    --foreground: 240 10% 3.9%;
-    --foreground-muted: 240 4% 46%;
+    /* Light & Clean Color System */
+    --background: 0 0% 100%;
+    --background-secondary: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --foreground-muted: 0 0% 50%;
 
-    /* Card System */
+    /* Card System - Light */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --card-border: 240 6% 90%;
+    --card-foreground: 0 0% 8%;
+    --card-border: 0 0% 88%;
 
-    /* Glass Effect */
-    --glass-background: 0 0% 100% / 0.8;
-    --glass-border: 240 6% 90% / 0.3;
+    /* Primary Brand - Blue */
+    --primary: 216 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 216 100% 45%;
 
-    /* Primary Brand */
-    --primary: 240 9% 8%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 240 8% 12%;
-
-    /* Accent Colors */
-    --accent: 217 32% 54%;
-    --accent-foreground: 0 0% 98%;
-    --accent-muted: 217 32% 54% / 0.1;
+    /* Accent - Blue Variations */
+    --accent: 216 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 216 50% 95%;
 
     /* Interactive States */
-    --hover: 240 5% 96%;
-    --active: 240 6% 90%;
+    --hover: 216 50% 96%;
+    --active: 216 50% 90%;
 
     /* Shadows & Effects */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -47,7 +43,7 @@
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--background-secondary)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(217 42% 64%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,11 +75,21 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --background-secondary: 0 0% 12%;
+    --foreground: 0 0% 95%;
+    --foreground-muted: 0 0% 65%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --card-border: 0 0% 20%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 8%;
+    --primary-hover: 0 0% 85%;
+
+    --accent: 216 100% 60%;
+    --accent-foreground: 0 0% 8%;
 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
@@ -148,6 +154,15 @@
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  /* Testimonial scroll animation */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
   }
 
   /* Interactive Elements */
@@ -259,5 +274,14 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
