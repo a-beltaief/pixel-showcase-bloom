@@ -27,12 +27,12 @@ const Jobs = () => {
         {/* Job Listings */}
         <section className="px-6 max-w-6xl mx-auto space-y-12">
           
-          {/* Account Manager */}
+          {/* Sales Representative */}
           <Card className="border-card-border">
             <CardHeader>
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <CardTitle className="text-3xl mb-2">Account Manager (m/w/d)</CardTitle>
+                  <CardTitle className="text-3xl mb-2">Sales Representative (m/w/d)</CardTitle>
                   <CardDescription className="text-lg">Vollzeit</CardDescription>
                 </div>
                 <Badge className="text-sm">Offene Position</Badge>
@@ -49,7 +49,7 @@ const Jobs = () => {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Euro className="w-5 h-5" />
-                  <span>€ 4.000,- brutto/Monat + 30% Bonus</span>
+                  <span>€ 3.200,- brutto/Monat + 30% Provision</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Briefcase className="w-5 h-5" />
@@ -63,14 +63,15 @@ const Jobs = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Deine Aufgaben</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex gap-2"><span className="text-primary">•</span> Kundenbetreuung und -beratung für unsere Website-Pakete (Basic, Premium, Enterprise)</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Neukundenakquise und aktive Ansprache potenzieller Kunden</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Erstellung und Präsentation individueller Angebote</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Vertragsverhandlungen und Abschlüsse</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Enge Zusammenarbeit mit dem Development-Team</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Pflege langfristiger Kundenbeziehungen</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Betreuung von Kunden während des gesamten Projektverlaufs</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Umsatzziele erreichen und übertreffen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Aktive Neukundenakquise im B2B-Bereich (Telefon, E-Mail, LinkedIn)</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Kaltakquise und Identifikation potenzieller Kunden</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Führung von Erstgesprächen und Bedarfsanalysen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Präsentation unserer Website-Pakete (Basic, Premium, Enterprise)</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Erstellung und Versand individueller Angebote</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Follow-up mit Interessenten bis zum Vertragsabschluss</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Pflege der Sales-Pipeline und CRM-System</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Enge Zusammenarbeit mit dem Support-Team für die Kundenübergabe</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Erreichung und Übertreffen von Verkaufszielen</li>
                 </ul>
               </div>
 
@@ -81,14 +82,15 @@ const Jobs = () => {
                   <div>
                     <h4 className="font-medium mb-2">Erforderliche Kenntnisse:</h4>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex gap-2"><span className="text-primary">•</span> Abgeschlossene kaufmännische Ausbildung (HAK, HAS, Studium) oder vergleichbare Qualifikation</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Mindestens 2 Jahre Erfahrung im B2B-Vertrieb oder Account Management</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Abgeschlossene kaufmännische Ausbildung (HAK, HAS) oder vergleichbare Qualifikation</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Mindestens 1-2 Jahre Erfahrung im B2B-Vertrieb oder Telefonverkauf</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Ausgezeichnete Kommunikationsfähigkeiten am Telefon und schriftlich</li>
                       <li className="flex gap-2"><span className="text-primary">•</span> Sehr gute Deutschkenntnisse in Wort und Schrift (C1/C2)</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Grundverständnis für Web-Technologien und digitale Produkte</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Sicherer Umgang mit CRM-Systemen und MS Office</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Kommunikationsstärke und Verhandlungsgeschick</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Ergebnisorientierte, selbstständige Arbeitsweise</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Hohe Eigenmotivation und Zielorientierung</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Hartnäckigkeit und Durchhaltevermögen bei der Kaltakquise</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Selbstständige, zielorientierte Arbeitsweise</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Hohe Eigenmotivation und "Hunter-Mentalität"</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Affinität zu digitalen Produkten und Web-Technologien</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Sicherer Umgang mit MS Office, CRM-Systemen und LinkedIn</li>
                     </ul>
                   </div>
                   
@@ -96,9 +98,10 @@ const Jobs = () => {
                     <h4 className="font-medium mb-2">Von Vorteil:</h4>
                     <ul className="space-y-2 text-muted-foreground">
                       <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung im IT/Software-Vertrieb</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Kenntnisse im Website-Bereich</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Kenntnisse im Website/Webdesign-Bereich</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung mit Social Selling</li>
                       <li className="flex gap-2"><span className="text-primary">•</span> Englischkenntnisse</li>
-                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung mit Startups oder jungen Unternehmen</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfolgsnachweise im Vertrieb</li>
                     </ul>
                   </div>
                 </div>
@@ -108,13 +111,15 @@ const Jobs = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Was wir bieten</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 4.000,- brutto) + 30% Performance-Bonus</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Fix-Gehalt (€ 3.200,- brutto) + 30% Provision on top</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Unbegrenztes Verdienstpotenzial durch Provisionsmodell</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Flexible Arbeitszeiten und Home Office Möglichkeit</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Modernes, junges Team</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Flache Hierarchien und kurze Entscheidungswege</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Raum für eigene Ideen und Gestaltungsspielraum</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre mit Uni-Background</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Entwicklungsmöglichkeiten in einem wachsenden Unternehmen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Moderne Sales-Tools und CRM-System</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Umfassende Einschulung in unsere Produkte</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Flache Hierarchien - direkte Kommunikation mit dem Gründer</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre mit viel Gestaltungsfreiraum</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Du baust den Vertrieb von Anfang an mit auf</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Entwicklungsperspektiven in einem wachsenden Unternehmen</li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
                   Kollektivvertrag Handel: Mindestgehalt ab € 2.446,- brutto/Monat
@@ -125,21 +130,158 @@ const Jobs = () => {
               <div className="bg-card-border/30 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Bewerbung</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben) an:
+                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, Referenzen/Erfolgsnachweise) an:
                 </p>
                 <div className="space-y-3">
                   <a 
-                    href="mailto:info@princeberg.com?subject=Bewerbung Account Manager"
+                    href="mailto:info@princeberg.com?subject=Bewerbung Sales Representative"
                     className="flex items-center gap-2 text-primary hover:underline"
                   >
                     <Mail className="w-5 h-5" />
                     info@princeberg.com
                   </a>
-                  <p className="text-sm text-muted-foreground">Betreff: "Bewerbung Account Manager"</p>
+                  <p className="text-sm text-muted-foreground">Betreff: "Bewerbung Sales Representative"</p>
                   <div className="pt-2">
                     <p className="text-muted-foreground mb-2">Oder kontaktiere uns direkt via WhatsApp:</p>
                     <a 
-                      href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20die%20Account%20Manager%20Position!"
+                      href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20die%20Sales%20Representative%20Position!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-primary hover:underline"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      Haris: +43 670 405 5549
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Marketing Manager */}
+          <Card className="border-card-border">
+            <CardHeader>
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <CardTitle className="text-3xl mb-2">Marketing Manager / Social Media Manager (m/w/d)</CardTitle>
+                  <CardDescription className="text-lg">Vollzeit</CardDescription>
+                </div>
+                <Badge className="text-sm">Offene Position</Badge>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="w-5 h-5" />
+                  <span>Wien/Linz (Home Office möglich)</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Clock className="w-5 h-5" />
+                  <span>38,5 Std/Woche</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Euro className="w-5 h-5" />
+                  <span>€ 3.500,- brutto/Monat + 30% Bonus</span>
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Briefcase className="w-5 h-5" />
+                  <span>Start: Ehestmöglich</span>
+                </div>
+              </div>
+            </CardHeader>
+
+            <CardContent className="space-y-8">
+              {/* Deine Aufgaben */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Deine Aufgaben</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex gap-2"><span className="text-primary">•</span> Entwicklung und Umsetzung der gesamten Marketing-Strategie für PRINCEBERG</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Management aller Social Media Kanäle (Instagram, LinkedIn, Facebook, TikTok)</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Content Creation: Posts, Stories, Reels, Videos</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Community Management und Interaktion mit Followern</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Lead-Generierung durch Online-Marketing-Kampagnen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Google Ads und Meta Ads Kampagnen aufsetzen und optimieren</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> SEO und Content Marketing für die Website</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> E-Mail-Marketing und Newsletter-Kampagnen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Analyse von Marketing-KPIs und Performance-Optimierung</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Zusammenarbeit mit dem Sales-Team für Lead-Übergabe</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Aufbau und Pflege der PRINCEBERG-Marke</li>
+                </ul>
+              </div>
+
+              {/* Das bringst du mit */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Das bringst du mit</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-medium mb-2">Erforderliche Kenntnisse:</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li className="flex gap-2"><span className="text-primary">•</span> Abgeschlossene Ausbildung im Bereich Marketing, Kommunikation oder vergleichbare Qualifikation</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Mindestens 2 Jahre Erfahrung im Online-Marketing und Social Media Management</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Sehr gute Kenntnisse in Social Media Plattformen (Instagram, LinkedIn, TikTok, Facebook)</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung mit Content Creation (Grafik, Video, Text)</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Kenntnisse in Google Ads, Meta Business Suite, Analytics</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Grundkenntnisse in SEO und Content Marketing</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Kreativität und Gespür für Trends</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Sehr gute Deutschkenntnisse in Wort und Schrift (C1/C2)</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Analytisches Denken und datengetriebenes Arbeiten</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Selbstständige, strukturierte Arbeitsweise</li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-medium mb-2">Von Vorteil:</h4>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung mit Design-Tools (Canva, Adobe Creative Suite)</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Video-Editing Kenntnisse (CapCut, Premiere Pro)</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung im B2B-Marketing</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Kenntnisse in Marketing-Automation-Tools</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Englischkenntnisse</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Erfahrung mit Startups oder jungen Unternehmen</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span> Eigene Social Media Erfolge (Portfolio)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Was wir bieten */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Was wir bieten</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 3.500,- brutto) + 30% Performance-Bonus</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Vollständige kreative Freiheit - du baust das Marketing von Grund auf</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Flexible Arbeitszeiten und Home Office Möglichkeit</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Budget für Marketing-Tools und Kampagnen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Modernes, junges Team</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Direkter Draht zum Gründer - kurze Entscheidungswege</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre mit Uni-Background</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Möglichkeit, deine eigenen Ideen umzusetzen</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Sichtbarer Impact deiner Arbeit auf das Unternehmenswachstum</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Weiterbildungsmöglichkeiten</li>
+                </ul>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Kollektivvertrag Handel: Mindestgehalt ab € 2.446,- brutto/Monat
+                </p>
+              </div>
+
+              {/* Bewerbung */}
+              <div className="bg-card-border/30 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4">Bewerbung</h3>
+                <p className="text-muted-foreground mb-4">
+                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, Portfolio/Arbeitsproben) an:
+                </p>
+                <div className="space-y-3">
+                  <a 
+                    href="mailto:info@princeberg.com?subject=Bewerbung Marketing Manager"
+                    className="flex items-center gap-2 text-primary hover:underline"
+                  >
+                    <Mail className="w-5 h-5" />
+                    info@princeberg.com
+                  </a>
+                  <p className="text-sm text-muted-foreground">Betreff: "Bewerbung Marketing Manager"</p>
+                  <div className="pt-2">
+                    <p className="text-muted-foreground mb-2">Oder kontaktiere uns direkt via WhatsApp:</p>
+                    <a 
+                      href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20die%20Marketing%20Manager%20Position!"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-primary hover:underline"
@@ -267,13 +409,13 @@ const Jobs = () => {
                   <div className="pt-2">
                     <p className="text-muted-foreground mb-2">Oder kontaktiere uns direkt via WhatsApp:</p>
                     <a 
-                      href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20die%20Support%20Agent%20Position!"
+                      href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20interessiere%20mich%20für%20die%20Support%20Agent%20Position!"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-primary hover:underline"
                     >
                       <MessageCircle className="w-5 h-5" />
-                      Haris: +43 670 405 5549
+                      Abderrahmen: +43 676 400 2129
                     </a>
                   </div>
                 </div>
