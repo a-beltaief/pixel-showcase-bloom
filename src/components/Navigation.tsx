@@ -22,6 +22,12 @@ export const Navigation = () => {
             >
               Termine
             </a>
+            <a 
+              href="/jobs"
+              className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Jobs
+            </a>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
