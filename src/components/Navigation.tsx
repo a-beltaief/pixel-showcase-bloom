@@ -4,9 +4,9 @@ export const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold tracking-tight">
+          <a href="/" className="text-2xl font-bold tracking-tight hover:text-accent transition-colors duration-300 cursor-pointer">
             PRINCEBERG
-          </div>
+          </a>
 
           {/* Navigation Links */}
           <div className="flex items-center gap-8">
