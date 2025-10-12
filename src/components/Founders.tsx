@@ -6,7 +6,7 @@ export const Founders = () => {
   const founders = [
     {
       name: "Haris Muranovic",
-      role: "Full-Stack Developer",
+      role: "Founding Developer",
       image: harisImage,
       whatsapp: "+43 670 405 5549",
       whatsappLink: "https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20eine%20Website!",
