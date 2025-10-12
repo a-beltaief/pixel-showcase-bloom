@@ -19,7 +19,7 @@ const Jobs = () => {
               Werde Teil unseres Teams! Wir suchen motivierte Talente, die mit uns wachsen wollen.
             </p>
             <p className="text-muted-foreground">
-              PRINCEBERG ist ein junges, dynamisches Startup-Unternehmen (Spinoff der Uni Linz) und seit Mai 2025 erfolgreich am Markt.
+              PRINCEBERG ist ein junges, dynamisches Startup-Unternehmen (Spinoff eines Uni-Projekts) und seit Mai 2025 erfolgreich am Markt.
             </p>
           </div>
         </section>
@@ -253,7 +253,7 @@ const Jobs = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Budget für Marketing-Tools und Kampagnen</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Modernes, junges Team</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Direkter Draht zum Gründer - kurze Entscheidungswege</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre mit Uni-Background</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre aus Uni-Projekt hervorgegangen</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Möglichkeit, deine eigenen Ideen umzusetzen</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Sichtbarer Impact deiner Arbeit auf das Unternehmenswachstum</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Weiterbildungsmöglichkeiten</li>
@@ -383,7 +383,7 @@ const Jobs = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Modernes, junges Team</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Flache Hierarchien und kurze Entscheidungswege</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Weiterbildungsmöglichkeiten im Web-Development</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre mit Uni-Background</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre aus Uni-Projekt hervorgegangen</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Entwicklungsperspektiven</li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-4">
@@ -432,7 +432,7 @@ const Jobs = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-card border border-card-border rounded-lg p-6">
                 <h3 className="font-semibold mb-2">Startup-Spirit</h3>
-                <p className="text-sm text-muted-foreground">Uni Spinoff mit dynamischer Kultur und flachen Hierarchien</p>
+                <p className="text-sm text-muted-foreground">Aus Uni-Projekt hervorgegangen mit dynamischer Kultur und flachen Hierarchien</p>
               </div>
               <div className="bg-card border border-card-border rounded-lg p-6">
                 <h3 className="font-semibold mb-2">Wachstum & Entwicklung</h3>

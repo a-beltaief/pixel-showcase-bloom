@@ -27,7 +27,7 @@ const Blog = () => {
           {/* Lead */}
           <div className="portfolio-card p-8 mb-12 text-lg leading-relaxed">
             <p className="font-bold text-accent mb-4">
-              Sie suchen nach "Website erstellen lassen Wien"? Oder vielleicht "Webentwickler JKU"? 
+              Sie suchen nach "Website erstellen lassen Wien"? Oder vielleicht "Webentwickler Uni-Projekt"? 
               Perfekt, dann sind Sie hier richtig. Aber Vorsicht: Was Sie gleich lesen werden, 
               könnte Ihre Meinung über moderne Webentwicklung komplett verändern.
             </p>
@@ -240,7 +240,7 @@ const Blog = () => {
             <div className="portfolio-card p-6 bg-background-secondary">
               <p className="text-sm text-foreground-muted italic">
                 <strong>Keywords für SEO:</strong> Webentwicklung Wien, Website erstellen lassen Wien, 
-                Webdesign Wien, JKU Webentwickler, Webentwicklung Österreich, Homepage erstellen Wien, 
+                Webdesign Wien, Uni Webentwickler, Webentwicklung Österreich, Homepage erstellen Wien, 
                 Webdesigner Wien, Website Agentur Wien, Günstige Website Wien, Professionelle Website Wien, 
                 WordPress Alternative Wien, Custom Website Wien, Responsive Design Wien, SEO Wien, 
                 Webentwicklung Studenten, AI Experten Wien

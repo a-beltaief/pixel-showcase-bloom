@@ -36,7 +36,7 @@ export const Hero = () => {
         </div>
         
         <p className="text-xl md:text-2xl text-foreground mb-4">
-          <strong>Von der JKU zum Startup</strong> - seit Mai 2025 am Markt
+          <strong>Vom Uni-Projekt zum Startup</strong> - seit Mai 2025 am Markt
         </p>
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
