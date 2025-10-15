@@ -1,12 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import sushiNight from "@/assets/sushi-night-2.png";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 // Import all images from Bilder_Über_Uns
 import img1 from "@/assets/Bilder_Über_Uns/IMG_03B52D091928-1.jpeg";
@@ -24,8 +18,7 @@ import img12 from "@/assets/Bilder_Über_Uns/IMG_8415.jpg";
 import img13 from "@/assets/Bilder_Über_Uns/PHOTO-2024-09-06-19-15-09.jpg";
 import img14 from "@/assets/Bilder_Über_Uns/e10d617d-9514-4a1a-b9e4-d697dae00ea4.jpg";
 
-const firstRowImages = [img1, img2, img3, img4, img5, img6, img7];
-const secondRowImages = [img8, img9, img10, img11, img12, img13, img14];
+const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14];
 
 export default function AboutUs() {
   return (
@@ -56,66 +49,30 @@ export default function AboutUs() {
             
           </div>
 
-          {/* Image Carousels */}
-          <div className="space-y-8">
-            {/* First Carousel - Scrolling Right */}
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                  stopOnInteraction: false,
-                }),
-              ]}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {firstRowImages.map((img, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="overflow-hidden rounded-xl shadow-lg h-64">
-                      <img
-                        src={img}
-                        alt={`Team Bild ${index + 1}`}
-                        className="w-full h-full object-contain bg-background"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-
-            {/* Second Carousel - Scrolling Left */}
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                  stopOnInteraction: false,
-                  playOnInit: true,
-                }),
-              ]}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4 [direction:rtl]">
-                {secondRowImages.map((img, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 [direction:ltr]">
-                    <div className="overflow-hidden rounded-xl shadow-lg h-64">
-                      <img
-                        src={img}
-                        alt={`Team Bild ${index + 8}`}
-                        className="w-full h-full object-contain bg-background"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+          {/* Infinite Scroll Carousel */}
+          <div className="relative w-full overflow-hidden">
+            <div className="flex animate-infinite-scroll">
+              {/* First set of images */}
+              {allImages.map((img, index) => (
+                <div key={`first-${index}`} className="flex-shrink-0 px-4">
+                  <img
+                    src={img}
+                    alt={`Team Bild ${index + 1}`}
+                    className="h-64 w-auto object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {allImages.map((img, index) => (
+                <div key={`second-${index}`} className="flex-shrink-0 px-4">
+                  <img
+                    src={img}
+                    alt={`Team Bild ${index + 1}`}
+                    className="h-64 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
