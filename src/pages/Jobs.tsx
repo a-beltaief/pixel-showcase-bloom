@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { MapPin, Clock, Euro, Briefcase, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Clock, Euro, Briefcase, Mail, MessageCircle, ChevronDown } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Jobs = () => {
   return (
@@ -25,11 +32,13 @@ const Jobs = () => {
         </section>
 
         {/* Job Listings */}
-        <section className="px-6 max-w-6xl mx-auto space-y-12">
+        <section className="px-6 max-w-6xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-6">
           
           {/* Sales Representative */}
-          <Card className="border-card-border">
-            <CardHeader>
+          <AccordionItem value="sales" className="border border-card-border rounded-xl overflow-hidden">
+            <AccordionTrigger className="px-6 py-4 hover:no-underline">
+              <CardHeader className="p-0 w-full">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <CardTitle className="text-3xl mb-2">Sales Representative (m/w/d)</CardTitle>
@@ -57,8 +66,10 @@ const Jobs = () => {
                 </div>
               </div>
             </CardHeader>
+            </AccordionTrigger>
 
-            <CardContent className="space-y-8">
+            <AccordionContent>
+            <CardContent className="space-y-8 px-6 pb-6">
               {/* Deine Aufgaben */}
               <div>
                 <h3 className="text-xl font-semibold mb-4">Deine Aufgaben</h3>
@@ -121,16 +132,13 @@ const Jobs = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Du baust den Vertrieb von Anfang an mit auf</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Entwicklungsperspektiven in einem wachsenden Unternehmen</li>
                 </ul>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Kollektivvertrag Handel: Mindestgehalt ab € 2.446,- brutto/Monat
-                </p>
               </div>
 
               {/* Bewerbung */}
               <div className="bg-card-border/30 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Bewerbung</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, Referenzen/Erfolgsnachweise) an:
+                  Sende deine Bewerbungsunterlagen an:
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -156,11 +164,13 @@ const Jobs = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+            </AccordionContent>
+          </AccordionItem>
 
           {/* Marketing Manager */}
-          <Card className="border-card-border">
-            <CardHeader>
+          <AccordionItem value="marketing" className="border border-card-border rounded-xl overflow-hidden">
+            <AccordionTrigger className="px-6 py-4 hover:no-underline">
+              <CardHeader className="p-0 w-full">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <CardTitle className="text-3xl mb-2">Marketing Manager / Social Media Manager (m/w/d)</CardTitle>
@@ -188,8 +198,10 @@ const Jobs = () => {
                 </div>
               </div>
             </CardHeader>
+            </AccordionTrigger>
 
-            <CardContent className="space-y-8">
+            <AccordionContent>
+            <CardContent className="space-y-8 px-6 pb-6">
               {/* Deine Aufgaben */}
               <div>
                 <h3 className="text-xl font-semibold mb-4">Deine Aufgaben</h3>
@@ -258,16 +270,13 @@ const Jobs = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Sichtbarer Impact deiner Arbeit auf das Unternehmenswachstum</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Weiterbildungsmöglichkeiten</li>
                 </ul>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Kollektivvertrag Handel: Mindestgehalt ab € 2.446,- brutto/Monat
-                </p>
               </div>
 
               {/* Bewerbung */}
               <div className="bg-card-border/30 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Bewerbung</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben, Portfolio/Arbeitsproben) an:
+                  Sende deine Bewerbungsunterlagen an:
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -293,11 +302,13 @@ const Jobs = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+            </AccordionContent>
+          </AccordionItem>
 
           {/* Support Agent */}
-          <Card className="border-card-border">
-            <CardHeader>
+          <AccordionItem value="support" className="border border-card-border rounded-xl overflow-hidden">
+            <AccordionTrigger className="px-6 py-4 hover:no-underline">
+              <CardHeader className="p-0 w-full">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <CardTitle className="text-3xl mb-2">Support Agent (m/w/d)</CardTitle>
@@ -325,8 +336,10 @@ const Jobs = () => {
                 </div>
               </div>
             </CardHeader>
+            </AccordionTrigger>
 
-            <CardContent className="space-y-8">
+            <AccordionContent>
+            <CardContent className="space-y-8 px-6 pb-6">
               {/* Deine Aufgaben */}
               <div>
                 <h3 className="text-xl font-semibold mb-4">Deine Aufgaben</h3>
@@ -386,16 +399,13 @@ const Jobs = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Startup-Atmosphäre aus Uni-Projekt hervorgegangen</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Entwicklungsperspektiven</li>
                 </ul>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Kollektivvertrag Information & Consulting: Mindestgehalt ab € 2.100,- brutto/Monat
-                </p>
               </div>
 
               {/* Bewerbung */}
               <div className="bg-card-border/30 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-4">Bewerbung</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sende deine Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben) an:
+                  Sende deine Bewerbungsunterlagen an:
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -421,8 +431,10 @@ const Jobs = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+            </AccordionContent>
+          </AccordionItem>
 
+          </Accordion>
         </section>
 
         {/* Why PRINCEBERG Section */}

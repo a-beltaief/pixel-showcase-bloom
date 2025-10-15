@@ -22,22 +22,13 @@ export default function AboutUs() {
             
             {/* Text */}
             <div className="order-1 md:order-2">
-              <p className="text-lg md:text-xl leading-relaxed text-foreground-muted">
-                Wir sind <span className="font-bold text-foreground">PRINCEBERG</span>, ein Software-Unternehmen aus Wien, 
-                das professionelle Webentwicklung zugänglich macht. Unser revolutionäres Website-System wurde als 
-                Universitätsprojekt entwickelt und setzt neue Maßstäbe – Premium-Websites in 14 Tagen zu einem 
-                Bruchteil der üblichen Kosten.
-              </p>
+            <p className="text-lg md:text-xl leading-relaxed text-foreground-muted">
+              Wir sind <span className="font-bold text-foreground">PRINCEBERG</span>, ein Universitätsprojekt aus Wien, 
+              das professionelle Webentwicklung zugänglich macht. Unser revolutionäres Website-System setzt neue 
+              Maßstäbe – Premium-Websites in 14 Tagen zu einem Bruchteil der üblichen Kosten.
+            </p>
             </div>
             
-            {/* Right Image */}
-            <div className="order-3">
-              <img 
-                src={sushiNight} 
-                alt="Sushi Night - 2024" 
-                className="w-full h-auto rounded-xl shadow-lg"
-              />
-            </div>
           </div>
 
           {/* Image Carousels Placeholder */}

@@ -26,7 +26,7 @@ export const Navigation = () => {
               href="/termine"
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
             >
-              Termine
+              Termin
             </a>
             <a 
               href="/jobs"
@@ -34,12 +34,12 @@ export const Navigation = () => {
             >
               Jobs
             </a>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <a 
+              href="/kontakt"
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
             >
               Kontakt
-            </button>
+            </a>
           </div>
         </div>
       </div>

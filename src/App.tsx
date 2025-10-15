@@ -10,6 +10,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AboutUs from "./pages/AboutUs";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // Create QueryClient outside of component to prevent re-creation
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/ueber-uns" element={<AboutUs />} />
           <Route path="/projekte" element={<Projects />} />
+          <Route path="/kontakt" element={<Contact />} />
           <Route path="/termine" element={<Booking />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/impressum" element={<Impressum />} />
