@@ -43,13 +43,6 @@ export const StorySection = () => {
             </div>
           ))}
         </div>
-
-        <div className="bg-card rounded-xl p-8 border border-card-border text-center">
-          <p className="text-lg leading-relaxed text-foreground">
-            <strong className="text-primary">Das Beste:</strong> Wir gehören uns selbst. 
-            Keine Investoren. Keine Kompromisse. Nur zufriedene Kunden.
-          </p>
-        </div>
       </div>
     </section>
   );
