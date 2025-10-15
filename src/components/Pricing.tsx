@@ -20,7 +20,7 @@ export const Pricing = () => {
       popular: false
     },
     {
-      name: "Premium Website",
+      name: "Plus Website",
       price: "80€",
       period: "pro Monat",
       description: "Für wachsende Unternehmen",
@@ -33,24 +33,24 @@ export const Pricing = () => {
         "WhatsApp-Support",
         "Monatlich 2h Änderungen"
       ],
-      cta: "Premium wählen",
+      cta: "Plus wählen",
       popular: true
     },
     {
-      name: "Enterprise",
+      name: "Premium Website",
       price: "Individual",
       period: "Angebot",
       description: "Für komplexe Projekte",
       features: [
         "Unbegrenzte Seiten",
-        "Alles aus Premium +",
+        "Alles aus Plus +",
         "Custom Development",
         "API-Entwicklung",
         "Prioritäts-Support",
         "Dedicated Account Manager",
         "SLA-Garantie"
       ],
-      cta: "Angebot anfragen",
+      cta: "Premium wählen",
       popular: false
     }
   ];
