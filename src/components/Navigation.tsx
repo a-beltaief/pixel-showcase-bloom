@@ -10,12 +10,18 @@ export const Navigation = () => {
 
           {/* Navigation Links */}
           <div className="flex items-center gap-8">
-            <button 
-              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+            <a 
+              href="/ueber-uns"
+              className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
+            >
+              Über uns
+            </a>
+            <a 
+              href="/projekte"
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"
             >
               Projekte
-            </button>
+            </a>
             <a 
               href="/termine"
               className="text-foreground-muted hover:text-accent transition-colors duration-300 font-medium"

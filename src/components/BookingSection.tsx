@@ -73,34 +73,6 @@ Nachricht: ${formData.message}`;
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-2">Paket</label>
-                <div className="flex gap-4">
-                  {["Basic", "Premium", "Enterprise"].map((pkg) => (
-                    <label key={pkg} className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="package"
-                        value={pkg}
-                        checked={formData.package === pkg}
-                        onChange={(e) => setFormData({ ...formData, package: e.target.value })}
-                        className="text-primary"
-                      />
-                      <span className="text-sm">{pkg}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2">Wunschtermin</label>
-                <Input
-                  type="date"
-                  value={formData.date}
-                  onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full"
-                />
-              </div>
 
               <div>
                 <label className="block text-sm font-semibold mb-2">Nachricht</label>
