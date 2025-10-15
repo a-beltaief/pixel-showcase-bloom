@@ -1,6 +1,20 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import sushiNight from "@/assets/sushi-night-2.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+// Import all images from Bilder_Über_Uns
+import img1 from "@/assets/Bilder_Über_Uns/IMG_03B52D091928-1.jpeg";
+import img2 from "@/assets/Bilder_Über_Uns/IMG_4687.jpg";
+import img3 from "@/assets/Bilder_Über_Uns/PHOTO-2024-09-06-19-15-09.jpg";
+
+const firstRowImages = [img1, img2, img3, img1, img2];
+const secondRowImages = [img3, img1, img2, img3, img1];
 
 export default function AboutUs() {
   return (
@@ -31,14 +45,66 @@ export default function AboutUs() {
             
           </div>
 
-          {/* Image Carousels Placeholder */}
+          {/* Image Carousels */}
           <div className="space-y-8">
-            <div className="bg-card border border-card-border rounded-xl p-8 text-center">
-              <p className="text-foreground-muted">
-                📸 Bitte laden Sie die Bilder für das Karussell hoch. 
-                Die erste Zeile wird nach rechts rotieren, die zweite nach links.
-              </p>
-            </div>
+            {/* First Carousel - Scrolling Right */}
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                  stopOnInteraction: false,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {firstRowImages.map((img, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="overflow-hidden rounded-xl shadow-lg">
+                      <img
+                        src={img}
+                        alt={`Team Bild ${index + 1}`}
+                        className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            {/* Second Carousel - Scrolling Left */}
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                  stopOnInteraction: false,
+                  playOnInit: true,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 [direction:rtl]">
+                {secondRowImages.map((img, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 [direction:ltr]">
+                    <div className="overflow-hidden rounded-xl shadow-lg">
+                      <img
+                        src={img}
+                        alt={`Team Bild ${index + 8}`}
+                        className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>
