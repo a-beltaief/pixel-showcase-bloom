@@ -1,72 +1,109 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
+import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, { message: "Name ist erforderlich" }).max(100, { message: "Name muss weniger als 100 Zeichen sein" }),
+  email: z.string().trim().email({ message: "Ungültige E-Mail-Adresse" }).max(255, { message: "E-Mail muss weniger als 255 Zeichen sein" }),
+  message: z.string().trim().min(1, { message: "Nachricht ist erforderlich" }).max(1000, { message: "Nachricht muss weniger als 1000 Zeichen sein" })
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema)
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: data
+      });
+
+      if (error) throw error;
+
+      toast.success("Nachricht erfolgreich gesendet!");
+      reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error("Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-24 pb-16 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">Kontakt</h1>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {/* Pakete & Beratung */}
-            <div className="bg-card rounded-xl p-6 border border-card-border">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Pakete & Beratung</h3>
-              <p className="text-sm text-foreground-muted mb-4">WhatsApp (bevorzugt)</p>
-              <div className="space-y-3">
-                <a 
-                  href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20eine%20Website!"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-primary hover:underline"
-                >
-                  Haris: +43 670 405 5549
-                </a>
-                <a 
-                  href="https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20interessiere%20mich%20für%20eine%20Website!"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-primary hover:underline"
-                >
-                  Abderrahmen: +43 676 400 2129
-                </a>
-              </div>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-base font-semibold">Name</Label>
+              <Input
+                id="name"
+                placeholder="Ihr vollständiger Name"
+                {...register("name")}
+                className="h-14 text-base border-border/50 focus:border-primary rounded-xl"
+              />
+              {errors.name && (
+                <p className="text-sm text-destructive">{errors.name.message}</p>
+              )}
             </div>
 
-            {/* Enterprise */}
-            <div className="bg-card rounded-xl p-6 border border-card-border">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Enterprise-Anfragen</h3>
-              <p className="text-sm text-foreground-muted mb-4">Haris Muranovic (Developer)</p>
-              <div className="space-y-3">
-                <a 
-                  href="mailto:haris@princeberg.com"
-                  className="block text-primary hover:underline"
-                >
-                  📧 haris@princeberg.com
-                </a>
-                <a 
-                  href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20habe%20eine%20Enterprise-Anfrage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-primary hover:underline"
-                >
-                  📱 +43 670 405 5549
-                </a>
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-base font-semibold">E-Mail Adresse</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="ihre.email@example.com"
+                {...register("email")}
+                className="h-14 text-base border-border/50 focus:border-primary rounded-xl"
+              />
+              {errors.email && (
+                <p className="text-sm text-destructive">{errors.email.message}</p>
+              )}
             </div>
-          </div>
 
-          {/* Allgemein */}
-          <div className="mt-8 text-center text-foreground-muted">
-            <p className="text-sm">Allgemein:</p>
-            <a 
-              href="mailto:info@princeberg.com"
-              className="text-primary hover:underline"
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-base font-semibold">Nachricht</Label>
+              <Textarea
+                id="message"
+                placeholder="Erzählen Sie mir von Ihrem Projekt..."
+                {...register("message")}
+                className="min-h-[200px] text-base border-border/50 focus:border-primary rounded-xl resize-none"
+              />
+              {errors.message && (
+                <p className="text-sm text-destructive">{errors.message.message}</p>
+              )}
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full h-16 text-base font-semibold rounded-xl bg-foreground text-background hover:bg-foreground/90"
             >
-              info@princeberg.com
-            </a>
-          </div>
+              {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </form>
         </div>
       </div>
       <Footer />
