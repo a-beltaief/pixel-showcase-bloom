@@ -10,11 +10,22 @@ import Autoplay from "embla-carousel-autoplay";
 
 // Import all images from Bilder_Über_Uns
 import img1 from "@/assets/Bilder_Über_Uns/IMG_03B52D091928-1.jpeg";
-import img2 from "@/assets/Bilder_Über_Uns/IMG_4687.jpg";
-import img3 from "@/assets/Bilder_Über_Uns/PHOTO-2024-09-06-19-15-09.jpg";
+import img2 from "@/assets/Bilder_Über_Uns/IMG_2396.jpg";
+import img3 from "@/assets/Bilder_Über_Uns/IMG_2625.jpg";
+import img4 from "@/assets/Bilder_Über_Uns/IMG_3438.jpg";
+import img5 from "@/assets/Bilder_Über_Uns/IMG_3868.jpg";
+import img6 from "@/assets/Bilder_Über_Uns/IMG_4687.jpg";
+import img7 from "@/assets/Bilder_Über_Uns/IMG_5833.jpg";
+import img8 from "@/assets/Bilder_Über_Uns/IMG_6273.png";
+import img9 from "@/assets/Bilder_Über_Uns/IMG_6302.jpg";
+import img10 from "@/assets/Bilder_Über_Uns/IMG_6829.jpg";
+import img11 from "@/assets/Bilder_Über_Uns/IMG_8238.jpg";
+import img12 from "@/assets/Bilder_Über_Uns/IMG_8415.jpg";
+import img13 from "@/assets/Bilder_Über_Uns/PHOTO-2024-09-06-19-15-09.jpg";
+import img14 from "@/assets/Bilder_Über_Uns/e10d617d-9514-4a1a-b9e4-d697dae00ea4.jpg";
 
-const firstRowImages = [img1, img2, img3, img1, img2];
-const secondRowImages = [img3, img1, img2, img3, img1];
+const firstRowImages = [img1, img2, img3, img4, img5, img6, img7];
+const secondRowImages = [img8, img9, img10, img11, img12, img13, img14];
 
 export default function AboutUs() {
   return (
@@ -64,11 +75,11 @@ export default function AboutUs() {
               <CarouselContent className="-ml-4">
                 {firstRowImages.map((img, index) => (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="overflow-hidden rounded-xl shadow-lg">
+                    <div className="overflow-hidden rounded-xl shadow-lg h-64">
                       <img
                         src={img}
                         alt={`Team Bild ${index + 1}`}
-                        className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain bg-background"
                       />
                     </div>
                   </CarouselItem>
@@ -94,11 +105,11 @@ export default function AboutUs() {
               <CarouselContent className="-ml-4 [direction:rtl]">
                 {secondRowImages.map((img, index) => (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 [direction:ltr]">
-                    <div className="overflow-hidden rounded-xl shadow-lg">
+                    <div className="overflow-hidden rounded-xl shadow-lg h-64">
                       <img
                         src={img}
                         alt={`Team Bild ${index + 8}`}
-                        className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain bg-background"
                       />
                     </div>
                   </CarouselItem>
