@@ -93,7 +93,7 @@ export default function AboutUs() {
               </div>
             )}
             <div 
-              className={`flex animate-infinite-scroll transition-opacity duration-500 ${
+              className={`flex transition-opacity duration-500 ${
                 imagesLoaded ? 'opacity-100' : 'opacity-0'
               }`}
             >
