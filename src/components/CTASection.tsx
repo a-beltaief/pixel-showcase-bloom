@@ -9,7 +9,7 @@ export const CTASection = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
-          <div className="bg-card rounded-xl p-8 border border-card-border">
+          <div className="bg-card rounded-xl p-8 border border-card-border flex flex-col">
             <h3 className="text-xl font-bold mb-4 text-primary">Schnellstart:</h3>
             <p className="text-foreground-muted mb-6">
               WhatsApp an Haris → Kurzes Gespräch → Start morgen
@@ -18,21 +18,21 @@ export const CTASection = () => {
               href="https://wa.me/436704055549?text=Hi%20Haris,%20ich%20möchte%20schnell%20starten!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors mt-auto"
             >
               <MessageCircle className="w-5 h-5" />
               WhatsApp: +43 670 405 5549
             </a>
           </div>
 
-          <div className="bg-card rounded-xl p-8 border border-card-border">
+          <div className="bg-card rounded-xl p-8 border border-card-border flex flex-col">
             <h3 className="text-xl font-bold mb-4 text-primary">Oder klassisch:</h3>
             <p className="text-foreground-muted mb-6">
               E-Mail für detaillierte Anfragen
             </p>
             <a
               href="mailto:info@princeberg.com"
-              className="inline-flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors"
+              className="inline-flex items-center gap-2 border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors mt-auto"
             >
               <Mail className="w-5 h-5" />
               info@princeberg.com

@@ -65,7 +65,7 @@ export const PortfolioGrid = () => {
 
         {/* Category Filter */}
         <div className={`flex flex-wrap justify-center gap-4 mb-16 transform transition-all duration-800 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          {categories.map((category, index) => (
+          {categories.filter(cat => cat !== 'Portfolio').map((category, index) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}

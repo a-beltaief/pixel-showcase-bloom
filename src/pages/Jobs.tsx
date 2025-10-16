@@ -173,7 +173,7 @@ const Jobs = () => {
               <CardHeader className="p-0 w-full">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <CardTitle className="text-3xl mb-2">Marketing Manager / Social Media Manager (m/w/d)</CardTitle>
+                  <CardTitle className="text-3xl mb-2">Marketing Manager (m/w/d)</CardTitle>
                   <CardDescription className="text-lg">Vollzeit</CardDescription>
                 </div>
                 <Badge className="text-sm">Offene Position</Badge>
@@ -190,7 +190,7 @@ const Jobs = () => {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Euro className="w-5 h-5" />
-                  <span>€ 3.500,- brutto/Monat + 30% Bonus</span>
+                  <span>€ 3.500,- brutto/Monat</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Briefcase className="w-5 h-5" />
@@ -259,7 +259,7 @@ const Jobs = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Was wir bieten</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 3.500,- brutto) + 30% Performance-Bonus</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 3.500,- brutto)</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Vollständige kreative Freiheit - du baust das Marketing von Grund auf</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Flexible Arbeitszeiten und Home Office Möglichkeit</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Budget für Marketing-Tools und Kampagnen</li>
@@ -328,7 +328,7 @@ const Jobs = () => {
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Euro className="w-5 h-5" />
-                  <span>€ 3.100,- brutto/Monat + 30% Bonus</span>
+                  <span>€ 3.100,- brutto/Monat</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Briefcase className="w-5 h-5" />
@@ -390,7 +390,7 @@ const Jobs = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Was wir bieten</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 3.100,- brutto) + 30% Performance-Bonus</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Attraktives Gehalt (€ 3.100,- brutto)</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Flexible Arbeitszeiten und Home Office Möglichkeit</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Umfassende Einarbeitung in unsere Systeme</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Modernes, junges Team</li>
