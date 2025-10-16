@@ -36,6 +36,21 @@ const Booking = () => {
 
         if (error) throw error;
         setAppointmentTypes(data || []);
+        
+        // Check for pre-selected service from URL
+        const params = new URLSearchParams(window.location.search);
+        const serviceParam = params.get('service');
+        
+        if (serviceParam && data) {
+          const preSelectedService = data.find(
+            service => service.name.toLowerCase().replace(/\s+/g, '-') === serviceParam
+          );
+          
+          if (preSelectedService) {
+            setSelectedService(preSelectedService);
+            setCurrentStep(2);
+          }
+        }
       } catch (error) {
         console.error('Error fetching appointment types:', error);
       } finally {

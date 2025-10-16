@@ -130,15 +130,16 @@ export const Pricing = () => {
                   {pkg.cta}
                 </a>
               ) : (
-                <button 
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                <a 
+                  href="/termine?service=kostenlose-erstberatung"
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
                     pkg.popular 
                       ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
                       : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
                   }`}
                 >
                   {pkg.cta}
-                </button>
+                </a>
               )}
             </div>
           ))}
