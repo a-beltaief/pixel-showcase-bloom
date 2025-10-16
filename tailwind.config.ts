@@ -108,7 +108,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "zoom-in": "zoom-in 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
         "zoom-out": "zoom-out 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-        "infinite-scroll": "infinite-scroll 10s linear infinite",
+        "infinite-scroll": "infinite-scroll 240s linear infinite",
       },
     },
   },
