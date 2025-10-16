@@ -103,15 +103,43 @@ export const Pricing = () => {
                 ))}
               </ul>
 
-              <button 
-                className={`w-full py-3 rounded-lg font-semibold transition-colors ${
-                  pkg.popular 
-                    ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
-                    : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
-                }`}
-              >
-                {pkg.cta}
-              </button>
+              {index === 0 ? (
+                <a 
+                  href="https://buy.stripe.com/28E9AN7CUeaNcZb3I7d3i00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
+                    pkg.popular 
+                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
+                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
+                  }`}
+                >
+                  {pkg.cta}
+                </a>
+              ) : index === 1 ? (
+                <a 
+                  href="https://buy.stripe.com/cNi00dg9q0jXbV77Ynd3i01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
+                    pkg.popular 
+                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
+                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
+                  }`}
+                >
+                  {pkg.cta}
+                </a>
+              ) : (
+                <button 
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                    pkg.popular 
+                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
+                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
+                  }`}
+                >
+                  {pkg.cta}
+                </button>
+              )}
             </div>
           ))}
         </div>
