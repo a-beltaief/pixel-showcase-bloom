@@ -18,6 +18,7 @@ export const Footer = () => {
         <div className="flex justify-center gap-6 text-sm pt-6 border-t border-primary-foreground/20">
           <a href="/impressum" className="hover:underline">Impressum</a>
           <a href="/datenschutz" className="hover:underline">Datenschutz</a>
+          <a href="/agb" className="hover:underline">AGB</a>
         </div>
       </div>
     </footer>
