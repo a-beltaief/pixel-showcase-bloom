@@ -15,6 +15,7 @@ import { useState } from "react";
 const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "Name ist erforderlich" }).max(100, { message: "Name muss weniger als 100 Zeichen sein" }),
   email: z.string().trim().email({ message: "Ungültige E-Mail-Adresse" }).max(255, { message: "E-Mail muss weniger als 255 Zeichen sein" }),
+  phone: z.string().trim().min(1, { message: "Handynummer ist erforderlich" }).max(20, { message: "Handynummer muss weniger als 20 Zeichen sein" }),
   message: z.string().trim().min(1, { message: "Nachricht ist erforderlich" }).max(1000, { message: "Nachricht muss weniger als 1000 Zeichen sein" })
 });
 
@@ -79,6 +80,20 @@ export default function Contact() {
               />
               {errors.email && (
                 <p className="text-sm text-destructive">{errors.email.message}</p>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-base font-semibold">Handynummer</Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="+43 123 456 7890"
+                {...register("phone")}
+                className="h-14 text-base border-border/50 focus:border-primary rounded-xl"
+              />
+              {errors.phone && (
+                <p className="text-sm text-destructive">{errors.phone.message}</p>
               )}
             </div>
 

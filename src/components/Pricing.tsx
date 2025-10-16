@@ -150,7 +150,7 @@ export const Pricing = () => {
             Alle Preise inkl. Hosting, SSL-Zertifikat und DSGVO-Compliance
           </p>
           <p className="text-foreground-muted text-sm">
-            ✓ Monatlich kündbar ✓ Keine Setup-Kosten ✓ 30 Tage Geld-zurück-Garantie
+            ✓ Keine Setup-Kosten ✓ 30 Tage Geld-zurück-Garantie
           </p>
         </div>
       </div>
