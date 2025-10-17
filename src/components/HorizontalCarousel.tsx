@@ -18,81 +18,69 @@ export default function HorizontalCarousel({
   pauseOnHover = true
 }: HorizontalCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [validImages, setValidImages] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Preload all images
+  // Intelligent non-blocking preload with timeout and error handling
   useEffect(() => {
-    let loadedCount = 0;
-    const totalImages = images.length;
-
-    if (totalImages === 0) {
-      setImagesLoaded(true);
+    if (images.length === 0) {
+      setIsLoading(false);
       return;
     }
 
-    const imagePromises = images.map((src) => {
-      return new Promise<void>((resolve) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-          loadedCount++;
-          console.log(`Bild geladen: ${loadedCount}/${totalImages}`);
-          if (loadedCount === totalImages) {
-            console.log('Alle Bilder geladen!');
-            setImagesLoaded(true);
-          }
-          resolve();
-        };
-        img.onerror = (error) => {
-          console.error('Fehler beim Laden:', src, error);
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-          resolve();
-        };
-      });
-    });
-
-    Promise.allSettled(imagePromises);
+    const loadImages = async () => {
+      const loadPromises = images.map((src) => 
+        new Promise<{ src: string; success: boolean }>((resolve) => {
+          const img = new Image();
+          const timeout = setTimeout(() => {
+            console.warn(`⏱️ Timeout für Bild: ${src}`);
+            resolve({ src, success: false });
+          }, 3000); // 3 Sekunden Timeout
+          
+          img.onload = () => {
+            clearTimeout(timeout);
+            console.log(`✅ Bild geladen: ${src}`);
+            resolve({ src, success: true });
+          };
+          
+          img.onerror = () => {
+            clearTimeout(timeout);
+            console.error(`❌ Fehler beim Laden: ${src}`);
+            resolve({ src, success: false });
+          };
+          
+          img.src = src;
+        })
+      );
+      
+      const results = await Promise.all(loadPromises);
+      const successful = results
+        .filter(r => r.success)
+        .map(r => r.src);
+      
+      console.log(`🎯 ${successful.length}/${images.length} Bilder erfolgreich geladen`);
+      setValidImages(successful);
+      setIsLoading(false);
+    };
+    
+    loadImages();
   }, [images]);
 
+  // Simplified container-based animation
   useEffect(() => {
-    if (!imagesLoaded) return;
+    if (!validImages.length || isLoading) return;
     
     const container = containerRef.current;
-    if (!container || images.length === 0) return;
+    if (!container) return;
 
-    const divItems = gsap.utils.toArray<HTMLElement>(container.children);
-    if (!divItems.length) return;
-
-    // Wait for next frame to ensure DOM is ready
+    // Wait for DOM to be ready
     requestAnimationFrame(() => {
-      // Calculate precise dimensions with gap
-      const firstItem = divItems[0];
-      const itemWidth = firstItem.offsetWidth;
-      const gap = 10; // 10px gap between images
-      const totalItemWidth = itemWidth + gap;
-      const totalWidth = totalItemWidth * images.length;
-
-      // Create seamless wrap function for range [0, totalWidth]
-      const wrapFn = (x: number) => {
-        const wrapped = gsap.utils.wrap(0, totalWidth)(x);
-        return wrapped;
-      };
-
-      // Position all items precisely (2 sets only)
-      const itemsPerSet = images.length;
-      divItems.forEach((child, i) => {
-        const setIndex = Math.floor(i / itemsPerSet);
-        const posInSet = i % itemsPerSet;
-        const xPos = (setIndex * totalWidth) + (posInSet * totalItemWidth);
-        gsap.set(child, { 
-          x: xPos,
-          force3D: true,
-          willChange: 'transform'
-        });
-      });
+      const imageWidth = 400; // Fixed width
+      const gap = 10;
+      const singleSetWidth = (imageWidth + gap) * validImages.length;
+      let currentX = 0;
+      let rafId: number;
+      let isPaused = false;
 
       const observer = Observer.create({
         target: container,
@@ -106,54 +94,51 @@ export default function HorizontalCarousel({
         },
         onChange: ({ deltaX, isDragging, event }) => {
           const d = event.type === 'wheel' ? -deltaX : deltaX;
-          const distance = isDragging ? d * 5 : d * 10;
+          const distance = isDragging ? d * 3 : d * 8;
+          currentX += distance;
           
-          divItems.forEach(child => {
-            const currentX = gsap.getProperty(child, 'x') as number;
-            const newX = wrapFn(currentX + distance);
-            gsap.set(child, {
-              x: newX,
-              force3D: true
-            });
-          });
+          // Wrap around smoothly
+          while (currentX > 0) currentX -= singleSetWidth;
+          while (currentX < -singleSetWidth * 2) currentX += singleSetWidth;
+          
+          gsap.set(container, { x: currentX, force3D: true });
         }
       });
 
-      let rafId: number;
       if (autoplay) {
-        const speedPerFrame = -autoplaySpeed;
-
         const tick = () => {
-          divItems.forEach(child => {
-            const currentX = gsap.getProperty(child, 'x') as number;
-            const newX = wrapFn(currentX + speedPerFrame);
-            gsap.set(child, {
-              x: newX,
-              force3D: true
-            });
-          });
+          if (!isPaused) {
+            currentX -= autoplaySpeed;
+            
+            // Simple reset when first set is fully scrolled
+            if (Math.abs(currentX) >= singleSetWidth) {
+              currentX = currentX + singleSetWidth;
+            }
+            
+            gsap.set(container, { x: currentX, force3D: true });
+          }
           rafId = requestAnimationFrame(tick);
         };
 
         rafId = requestAnimationFrame(tick);
 
         if (pauseOnHover) {
-          const stopTicker = () => rafId && cancelAnimationFrame(rafId);
-          const startTicker = () => (rafId = requestAnimationFrame(tick));
+          const handleMouseEnter = () => { isPaused = true; };
+          const handleMouseLeave = () => { isPaused = false; };
 
-          container.addEventListener('mouseenter', stopTicker);
-          container.addEventListener('mouseleave', startTicker);
+          container.addEventListener('mouseenter', handleMouseEnter);
+          container.addEventListener('mouseleave', handleMouseLeave);
 
           return () => {
             observer.kill();
-            stopTicker();
-            container.removeEventListener('mouseenter', stopTicker);
-            container.removeEventListener('mouseleave', startTicker);
+            cancelAnimationFrame(rafId);
+            container.removeEventListener('mouseenter', handleMouseEnter);
+            container.removeEventListener('mouseleave', handleMouseLeave);
           };
         } else {
           return () => {
             observer.kill();
-            rafId && cancelAnimationFrame(rafId);
+            cancelAnimationFrame(rafId);
           };
         }
       }
@@ -163,9 +148,9 @@ export default function HorizontalCarousel({
         if (rafId) cancelAnimationFrame(rafId);
       };
     });
-  }, [images, autoplay, autoplaySpeed, pauseOnHover, imagesLoaded]);
+  }, [validImages, autoplay, autoplaySpeed, pauseOnHover, isLoading]);
 
-  if (!imagesLoaded) {
+  if (isLoading) {
     return (
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center justify-center h-64 bg-background">
@@ -178,23 +163,32 @@ export default function HorizontalCarousel({
     );
   }
 
+  if (validImages.length === 0) {
+    return (
+      <div className="relative w-full overflow-hidden">
+        <div className="flex items-center justify-center h-64 bg-background">
+          <div className="text-foreground-muted text-lg">Keine Bilder verfügbar</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full overflow-hidden">
       <div
         ref={containerRef}
-        className="flex cursor-grab"
+        className="flex gap-[10px] cursor-grab"
       >
-        {/* Duplicate images 2 times for seamless loop */}
-        {[...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0" style={{ marginRight: '10px' }}>
+        {/* Render 3 sets for seamless looping */}
+        {[...validImages, ...validImages, ...validImages].map((img, index) => (
+          <div key={index} className="flex-shrink-0">
             <img
               src={img}
-              alt={`Team Bild ${(index % images.length) + 1}`}
-              className="h-64 w-auto object-contain rounded-md"
-              style={{ display: 'block' }}
+              alt={`Team Bild ${(index % validImages.length) + 1}`}
+              className="h-64 rounded-md object-cover"
+              style={{ width: '400px', display: 'block' }}
               loading="eager"
               decoding="async"
-              fetchPriority="high"
             />
           </div>
         ))}
