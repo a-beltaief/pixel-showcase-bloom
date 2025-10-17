@@ -75,13 +75,13 @@ export default function HorizontalCarousel({
       const totalItemWidth = itemWidth + gap;
       const totalWidth = totalItemWidth * images.length;
 
-      // Create seamless wrap function
+      // Create seamless wrap function for range [0, totalWidth]
       const wrapFn = (x: number) => {
-        const wrapped = gsap.utils.wrap(-totalWidth, totalWidth)(x);
+        const wrapped = gsap.utils.wrap(0, totalWidth)(x);
         return wrapped;
       };
 
-      // Position all items precisely
+      // Position all items precisely (2 sets only)
       const itemsPerSet = images.length;
       divItems.forEach((child, i) => {
         const setIndex = Math.floor(i / itemsPerSet);
@@ -183,11 +183,10 @@ export default function HorizontalCarousel({
       <div
         ref={containerRef}
         className="flex cursor-grab"
-        style={{ gap: '10px' }}
       >
-        {/* Duplicate images 4 times for ultra-seamless loop */}
-        {[...images, ...images, ...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0">
+        {/* Duplicate images 2 times for seamless loop */}
+        {[...images, ...images].map((img, index) => (
+          <div key={index} className="flex-shrink-0" style={{ marginRight: '10px' }}>
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
