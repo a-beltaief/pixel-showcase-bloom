@@ -35,8 +35,12 @@ export default function HorizontalCarousel({
 
     const wrapFn = gsap.utils.wrap(-totalWidth, totalWidth);
 
+    // Position items in a continuous loop
+    const itemsPerSet = images.length;
     divItems.forEach((child, i) => {
-      const x = i * totalItemWidth;
+      const setIndex = Math.floor(i / itemsPerSet);
+      const posInSet = i % itemsPerSet;
+      const x = (setIndex * totalWidth) + (posInSet * totalItemWidth);
       gsap.set(child, { x });
     });
 
@@ -117,12 +121,13 @@ export default function HorizontalCarousel({
         ref={containerRef}
         className="flex cursor-grab"
       >
-        {images.map((img, index) => (
+        {/* Duplicate images 3 times for seamless infinite loop */}
+        {[...images, ...images, ...images].map((img, index) => (
           <div key={index} className="flex-shrink-0 px-4">
             <img
               src={img}
-              alt={`Team Bild ${index + 1}`}
-              className="h-64 w-auto object-contain"
+              alt={`Team Bild ${(index % images.length) + 1}`}
+              className="h-64 w-auto object-contain rounded-lg"
               loading="eager"
               decoding="async"
             />

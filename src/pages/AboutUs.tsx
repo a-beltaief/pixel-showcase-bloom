@@ -18,8 +18,17 @@ import img11 from "@/assets/Bilder_Über_Uns/IMG_8238.jpg";
 import img12 from "@/assets/Bilder_Über_Uns/IMG_8415.jpg";
 import img13 from "@/assets/Bilder_Über_Uns/PHOTO-2024-09-06-19-15-09.jpg";
 import img14 from "@/assets/Bilder_Über_Uns/e10d617d-9514-4a1a-b9e4-d697dae00ea4.jpg";
+import img15 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (1).jpeg";
+import img16 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (2).jpeg";
+import img17 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (3).jpeg";
+import img18 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (4).jpeg";
+import img19 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (5).jpeg";
+import img20 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (6).jpeg";
+import img21 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30 (7).jpeg";
+import img22 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.30.jpeg";
+import img23 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.31.jpeg";
 
-const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14];
+const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23];
 
 
 export default function AboutUs() {
@@ -55,7 +64,7 @@ export default function AboutUs() {
           </div>
 
           {/* Horizontal Carousel */}
-          <HorizontalCarousel images={allImages} autoplay={true} autoplaySpeed={0.5} pauseOnHover={true} />
+          <HorizontalCarousel images={allImages} autoplay={true} autoplaySpeed={0.6} pauseOnHover={true} />
         </div>
       </div>
       <Footer />
