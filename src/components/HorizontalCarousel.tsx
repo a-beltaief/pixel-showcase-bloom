@@ -58,97 +58,103 @@ export default function HorizontalCarousel({
     const divItems = gsap.utils.toArray<HTMLElement>(container.children);
     if (!divItems.length) return;
 
-    // Calculate precise dimensions
-    const firstItem = divItems[0];
-    const itemWidth = firstItem.offsetWidth;
-    const itemStyle = getComputedStyle(firstItem);
-    const paddingLeft = parseFloat(itemStyle.paddingLeft) || 0;
-    const paddingRight = parseFloat(itemStyle.paddingRight) || 0;
-    const totalItemWidth = itemWidth + paddingLeft + paddingRight;
-    const totalWidth = totalItemWidth * images.length;
+    // Wait for next frame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      // Calculate precise dimensions with gap
+      const firstItem = divItems[0];
+      const itemWidth = firstItem.offsetWidth;
+      const gap = 50; // 50px gap between images
+      const totalItemWidth = itemWidth + gap;
+      const totalWidth = totalItemWidth * images.length;
 
-    const wrapFn = gsap.utils.wrap(-totalWidth, totalWidth);
-
-    // Position items precisely for seamless loop
-    const itemsPerSet = images.length;
-    divItems.forEach((child, i) => {
-      const setIndex = Math.floor(i / itemsPerSet);
-      const posInSet = i % itemsPerSet;
-      const x = (setIndex * totalWidth) + (posInSet * totalItemWidth);
-      gsap.set(child, { x, force3D: true });
-    });
-
-    const observer = Observer.create({
-      target: container,
-      type: 'wheel,touch,pointer',
-      preventDefault: true,
-      onPress: ({ target }) => {
-        (target as HTMLElement).style.cursor = 'grabbing';
-      },
-      onRelease: ({ target }) => {
-        (target as HTMLElement).style.cursor = 'grab';
-      },
-      onChange: ({ deltaX, isDragging, event }) => {
-        const d = event.type === 'wheel' ? -deltaX : deltaX;
-        const distance = isDragging ? d * 5 : d * 10;
-        divItems.forEach(child => {
-          gsap.to(child, {
-            duration: 0.5,
-            ease: 'power2.out',
-            x: `+=${distance}`,
-            force3D: true,
-            modifiers: {
-              x: gsap.utils.unitize(wrapFn)
-            }
-          });
-        });
-      }
-    });
-
-    let rafId: number;
-    if (autoplay) {
-      const speedPerFrame = -autoplaySpeed; // Negative for right to left
-
-      const tick = () => {
-        divItems.forEach(child => {
-          gsap.set(child, {
-            x: `+=${speedPerFrame}`,
-            force3D: true,
-            modifiers: {
-              x: gsap.utils.unitize(wrapFn)
-            }
-          });
-        });
-        rafId = requestAnimationFrame(tick);
+      // Create seamless wrap function
+      const wrapFn = (x: number) => {
+        const wrapped = gsap.utils.wrap(-totalWidth, totalWidth)(x);
+        return wrapped;
       };
 
-      rafId = requestAnimationFrame(tick);
+      // Position all items precisely
+      const itemsPerSet = images.length;
+      divItems.forEach((child, i) => {
+        const setIndex = Math.floor(i / itemsPerSet);
+        const posInSet = i % itemsPerSet;
+        const xPos = (setIndex * totalWidth) + (posInSet * totalItemWidth);
+        gsap.set(child, { 
+          x: xPos,
+          force3D: true,
+          willChange: 'transform'
+        });
+      });
 
-      if (pauseOnHover) {
-        const stopTicker = () => rafId && cancelAnimationFrame(rafId);
-        const startTicker = () => (rafId = requestAnimationFrame(tick));
+      const observer = Observer.create({
+        target: container,
+        type: 'wheel,touch,pointer',
+        preventDefault: true,
+        onPress: ({ target }) => {
+          (target as HTMLElement).style.cursor = 'grabbing';
+        },
+        onRelease: ({ target }) => {
+          (target as HTMLElement).style.cursor = 'grab';
+        },
+        onChange: ({ deltaX, isDragging, event }) => {
+          const d = event.type === 'wheel' ? -deltaX : deltaX;
+          const distance = isDragging ? d * 5 : d * 10;
+          
+          divItems.forEach(child => {
+            const currentX = gsap.getProperty(child, 'x') as number;
+            const newX = wrapFn(currentX + distance);
+            gsap.set(child, {
+              x: newX,
+              force3D: true
+            });
+          });
+        }
+      });
 
-        container.addEventListener('mouseenter', stopTicker);
-        container.addEventListener('mouseleave', startTicker);
+      let rafId: number;
+      if (autoplay) {
+        const speedPerFrame = -autoplaySpeed;
 
-        return () => {
-          observer.kill();
-          stopTicker();
-          container.removeEventListener('mouseenter', stopTicker);
-          container.removeEventListener('mouseleave', startTicker);
+        const tick = () => {
+          divItems.forEach(child => {
+            const currentX = gsap.getProperty(child, 'x') as number;
+            const newX = wrapFn(currentX + speedPerFrame);
+            gsap.set(child, {
+              x: newX,
+              force3D: true
+            });
+          });
+          rafId = requestAnimationFrame(tick);
         };
-      } else {
-        return () => {
-          observer.kill();
-          rafId && cancelAnimationFrame(rafId);
-        };
+
+        rafId = requestAnimationFrame(tick);
+
+        if (pauseOnHover) {
+          const stopTicker = () => rafId && cancelAnimationFrame(rafId);
+          const startTicker = () => (rafId = requestAnimationFrame(tick));
+
+          container.addEventListener('mouseenter', stopTicker);
+          container.addEventListener('mouseleave', startTicker);
+
+          return () => {
+            observer.kill();
+            stopTicker();
+            container.removeEventListener('mouseenter', stopTicker);
+            container.removeEventListener('mouseleave', startTicker);
+          };
+        } else {
+          return () => {
+            observer.kill();
+            rafId && cancelAnimationFrame(rafId);
+          };
+        }
       }
-    }
 
-    return () => {
-      observer.kill();
-      if (rafId) cancelAnimationFrame(rafId);
-    };
+      return () => {
+        observer.kill();
+        if (rafId) cancelAnimationFrame(rafId);
+      };
+    });
   }, [images, autoplay, autoplaySpeed, pauseOnHover, imagesLoaded]);
 
   if (!imagesLoaded) {
@@ -165,15 +171,17 @@ export default function HorizontalCarousel({
     <div className="relative w-full overflow-hidden">
       <div
         ref={containerRef}
-        className="flex cursor-grab gap-1"
+        className="flex cursor-grab"
+        style={{ gap: '50px' }}
       >
-        {/* Duplicate images 3 times for seamless infinite loop */}
-        {[...images, ...images, ...images].map((img, index) => (
+        {/* Duplicate images 4 times for ultra-seamless loop */}
+        {[...images, ...images, ...images, ...images].map((img, index) => (
           <div key={index} className="flex-shrink-0">
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
               className="h-64 w-auto object-contain rounded-md"
+              style={{ display: 'block' }}
               loading="eager"
               decoding="async"
               fetchPriority="high"
