@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/Observer';
 
@@ -18,8 +18,40 @@ export default function HorizontalCarousel({
   pauseOnHover = true
 }: HorizontalCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all images
+  useEffect(() => {
+    let loadedCount = 0;
+    const totalImages = images.length;
+
+    const imagePromises = images.map((src) => {
+      return new Promise<void>((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+          resolve();
+        };
+        img.onerror = () => {
+          loadedCount++;
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+          reject();
+        };
+      });
+    });
+
+    Promise.allSettled(imagePromises);
+  }, [images]);
 
   useEffect(() => {
+    if (!imagesLoaded) return;
+    
     const container = containerRef.current;
     if (!container || images.length === 0) return;
 
@@ -113,7 +145,17 @@ export default function HorizontalCarousel({
       observer.kill();
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [images, autoplay, autoplaySpeed, pauseOnHover]);
+  }, [images, autoplay, autoplaySpeed, pauseOnHover, imagesLoaded]);
+
+  if (!imagesLoaded) {
+    return (
+      <div className="relative w-full overflow-hidden">
+        <div className="flex items-center justify-center h-64">
+          <div className="text-foreground-muted">Wird geladen...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -123,13 +165,14 @@ export default function HorizontalCarousel({
       >
         {/* Duplicate images 3 times for seamless infinite loop */}
         {[...images, ...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0 px-4">
+          <div key={index} className="flex-shrink-0 px-1">
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
               className="h-64 w-auto object-contain rounded-lg"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
             />
           </div>
         ))}
