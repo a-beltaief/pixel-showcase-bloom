@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { useState, useEffect } from "react";
 import sushiNight from "@/assets/sushi-night-2.png";
+import HorizontalCarousel from "@/components/HorizontalCarousel";
 
 // Import all images from Bilder_Über_Uns
 import img1 from "@/assets/Bilder_Über_Uns/IMG_03B52D091928-1.jpeg";
@@ -23,33 +23,6 @@ const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, 
 
 
 export default function AboutUs() {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [loadedCount, setLoadedCount] = useState(0);
-
-  useEffect(() => {
-    // Preload all images
-    let loaded = 0;
-    const totalImages = allImages.length;
-    
-    allImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        loaded++;
-        setLoadedCount(loaded);
-        if (loaded === totalImages) {
-          setImagesLoaded(true);
-        }
-      };
-      img.onerror = () => {
-        loaded++;
-        setLoadedCount(loaded);
-        if (loaded === totalImages) {
-          setImagesLoaded(true);
-        }
-      };
-    });
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,50 +54,8 @@ export default function AboutUs() {
             
           </div>
 
-          {/* Infinite Scroll Carousel */}
-          <div className="relative w-full overflow-hidden">
-            {!imagesLoaded && (
-              <div className="flex items-center justify-center h-64">
-                <div className="text-center">
-                  <div className="animate-pulse text-foreground-muted">
-                    Bilder werden geladen... ({loadedCount}/{allImages.length})
-                  </div>
-                </div>
-              </div>
-            )}
-            <div 
-              className={`flex animate-infinite-scroll transition-opacity duration-500 ${
-                imagesLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              {/* First set of images */}
-              {allImages.map((img, index) => (
-                <div key={`first-${index}`} className="flex-shrink-0 px-4">
-                  <img
-                    src={img}
-                    alt={`Team Bild ${index + 1}`}
-                    className="h-64 w-auto object-contain"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {allImages.map((img, index) => (
-                <div key={`second-${index}`} className="flex-shrink-0 px-4">
-                  <img
-                    src={img}
-                    alt={`Team Bild ${index + 1}`}
-                    className="h-64 w-auto object-contain"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Horizontal Carousel */}
+          <HorizontalCarousel images={allImages} autoplay={true} autoplaySpeed={0.5} pauseOnHover={true} />
         </div>
       </div>
       <Footer />
