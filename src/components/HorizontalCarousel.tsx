@@ -165,15 +165,15 @@ export default function HorizontalCarousel({
     <div className="relative w-full overflow-hidden">
       <div
         ref={containerRef}
-        className="flex cursor-grab"
+        className="flex cursor-grab gap-1"
       >
         {/* Duplicate images 3 times for seamless infinite loop */}
         {[...images, ...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0 px-0.25">
+          <div key={index} className="flex-shrink-0">
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
-              className="h-64 w-auto object-contain rounded-lg"
+              className="h-64 w-auto object-contain rounded-md"
               loading="eager"
               decoding="async"
               fetchPriority="high"

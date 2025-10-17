@@ -29,7 +29,8 @@ import img22 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.
 import img23 from "@/assets/Bilder_Über_Uns/WhatsApp Image 2025-10-17 at 02.25.31.jpeg";
 import img24 from "@/assets/Bilder_Über_Uns/PHOTO-2025-09-30-02-00-04.jpg";
 
-const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24];
+// Gemischte Reihenfolge für Vielfalt
+const allImages = [img1, img15, img4, img20, img7, img2, img18, img10, img24, img5, img22, img8, img16, img11, img3, img21, img13, img6, img19, img14, img9, img23, img12, img17];
 
 
 export default function AboutUs() {
@@ -37,8 +38,8 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="pt-24 pb-16 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="pt-24 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">Über uns</h1>
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -63,9 +64,11 @@ export default function AboutUs() {
             </div>
             
           </div>
+        </div>
 
-          {/* Horizontal Carousel */}
-          <HorizontalCarousel images={allImages} autoplay={true} autoplaySpeed={0.69} pauseOnHover={true} />
+        {/* Horizontal Carousel - Full Width */}
+        <div className="w-full">
+          <HorizontalCarousel images={allImages} autoplay={true} autoplaySpeed={0.91} pauseOnHover={true} />
         </div>
       </div>
       <Footer />
