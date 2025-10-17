@@ -25,23 +25,31 @@ export default function HorizontalCarousel({
     let loadedCount = 0;
     const totalImages = images.length;
 
+    if (totalImages === 0) {
+      setImagesLoaded(true);
+      return;
+    }
+
     const imagePromises = images.map((src) => {
-      return new Promise<void>((resolve, reject) => {
+      return new Promise<void>((resolve) => {
         const img = new Image();
         img.src = src;
         img.onload = () => {
+          loadedCount++;
+          console.log(`Bild geladen: ${loadedCount}/${totalImages}`);
+          if (loadedCount === totalImages) {
+            console.log('Alle Bilder geladen!');
+            setImagesLoaded(true);
+          }
+          resolve();
+        };
+        img.onerror = (error) => {
+          console.error('Fehler beim Laden:', src, error);
           loadedCount++;
           if (loadedCount === totalImages) {
             setImagesLoaded(true);
           }
           resolve();
-        };
-        img.onerror = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-          reject();
         };
       });
     });
@@ -63,7 +71,7 @@ export default function HorizontalCarousel({
       // Calculate precise dimensions with gap
       const firstItem = divItems[0];
       const itemWidth = firstItem.offsetWidth;
-      const gap = 50; // 50px gap between images
+      const gap = 15; // 15px gap between images
       const totalItemWidth = itemWidth + gap;
       const totalWidth = totalItemWidth * images.length;
 
@@ -160,8 +168,11 @@ export default function HorizontalCarousel({
   if (!imagesLoaded) {
     return (
       <div className="relative w-full overflow-hidden">
-        <div className="flex items-center justify-center h-64">
-          <div className="text-foreground-muted">Wird geladen...</div>
+        <div className="flex items-center justify-center h-64 bg-background">
+          <div className="flex flex-col items-center gap-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            <div className="text-foreground-muted text-lg">Bilder werden geladen...</div>
+          </div>
         </div>
       </div>
     );
@@ -172,7 +183,7 @@ export default function HorizontalCarousel({
       <div
         ref={containerRef}
         className="flex cursor-grab"
-        style={{ gap: '50px' }}
+        style={{ gap: '15px' }}
       >
         {/* Duplicate images 4 times for ultra-seamless loop */}
         {[...images, ...images, ...images, ...images].map((img, index) => (
