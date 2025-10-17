@@ -58,22 +58,24 @@ export default function HorizontalCarousel({
     const divItems = gsap.utils.toArray<HTMLElement>(container.children);
     if (!divItems.length) return;
 
+    // Calculate precise dimensions
     const firstItem = divItems[0];
     const itemWidth = firstItem.offsetWidth;
     const itemStyle = getComputedStyle(firstItem);
-    const itemMarginRight = parseFloat(itemStyle.marginRight) || 0;
-    const totalItemWidth = itemWidth + itemMarginRight;
+    const paddingLeft = parseFloat(itemStyle.paddingLeft) || 0;
+    const paddingRight = parseFloat(itemStyle.paddingRight) || 0;
+    const totalItemWidth = itemWidth + paddingLeft + paddingRight;
     const totalWidth = totalItemWidth * images.length;
 
     const wrapFn = gsap.utils.wrap(-totalWidth, totalWidth);
 
-    // Position items in a continuous loop
+    // Position items precisely for seamless loop
     const itemsPerSet = images.length;
     divItems.forEach((child, i) => {
       const setIndex = Math.floor(i / itemsPerSet);
       const posInSet = i % itemsPerSet;
       const x = (setIndex * totalWidth) + (posInSet * totalItemWidth);
-      gsap.set(child, { x });
+      gsap.set(child, { x, force3D: true });
     });
 
     const observer = Observer.create({
@@ -92,8 +94,9 @@ export default function HorizontalCarousel({
         divItems.forEach(child => {
           gsap.to(child, {
             duration: 0.5,
-            ease: 'expo.out',
+            ease: 'power2.out',
             x: `+=${distance}`,
+            force3D: true,
             modifiers: {
               x: gsap.utils.unitize(wrapFn)
             }
@@ -110,6 +113,7 @@ export default function HorizontalCarousel({
         divItems.forEach(child => {
           gsap.set(child, {
             x: `+=${speedPerFrame}`,
+            force3D: true,
             modifiers: {
               x: gsap.utils.unitize(wrapFn)
             }
@@ -165,7 +169,7 @@ export default function HorizontalCarousel({
       >
         {/* Duplicate images 3 times for seamless infinite loop */}
         {[...images, ...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0 px-0.5">
+          <div key={index} className="flex-shrink-0 px-0.25">
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
