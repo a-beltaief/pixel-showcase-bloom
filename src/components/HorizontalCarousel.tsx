@@ -165,7 +165,7 @@ export default function HorizontalCarousel({
       >
         {/* Duplicate images 3 times for seamless infinite loop */}
         {[...images, ...images, ...images].map((img, index) => (
-          <div key={index} className="flex-shrink-0 px-1">
+          <div key={index} className="flex-shrink-0 px-0.5">
             <img
               src={img}
               alt={`Team Bild ${(index % images.length) + 1}`}
