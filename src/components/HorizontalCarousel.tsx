@@ -71,7 +71,7 @@ export default function HorizontalCarousel({
       // Calculate precise dimensions with gap
       const firstItem = divItems[0];
       const itemWidth = firstItem.offsetWidth;
-      const gap = 15; // 15px gap between images
+      const gap = 10; // 10px gap between images
       const totalItemWidth = itemWidth + gap;
       const totalWidth = totalItemWidth * images.length;
 
@@ -183,7 +183,7 @@ export default function HorizontalCarousel({
       <div
         ref={containerRef}
         className="flex cursor-grab"
-        style={{ gap: '15px' }}
+        style={{ gap: '10px' }}
       >
         {/* Duplicate images 4 times for ultra-seamless loop */}
         {[...images, ...images, ...images, ...images].map((img, index) => (
