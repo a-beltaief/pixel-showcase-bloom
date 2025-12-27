@@ -6,18 +6,18 @@ export const Founders = () => {
   const founders = [
     {
       name: "Haris Muranovic",
-      role: "Developer & UX/UI Designer",
+      role: "Developer & System Architect",
       image: harisImage,
       whatsapp: "+43 670 405 5549",
-      whatsappLink: "https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20eine%20Website!",
+      whatsappLink: "https://wa.me/436704055549?text=Hi%20Haris,%20ich%20interessiere%20mich%20für%20individuelle%20Software!",
       linkedin: "https://www.linkedin.com/in/muranovic/"
     },
     {
       name: "Abderrahmen Beltaief",
-      role: "Customer Success & Account Manager",
+      role: "Customer Success & Projektleitung",
       image: abderrahmenImage,
       whatsapp: "+43 676 400 2129",
-      whatsappLink: "https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20interessiere%20mich%20für%20eine%20Website!",
+      whatsappLink: "https://wa.me/436764002129?text=Hi%20Abderrahmen,%20ich%20interessiere%20mich%20für%20individuelle%20Software!",
       linkedin: "https://www.linkedin.com/in/abeltaief/"
     }
   ];

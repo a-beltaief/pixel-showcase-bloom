@@ -3,7 +3,7 @@ export const Footer = () => {
     <footer className="py-12 px-6 bg-primary text-primary-foreground">
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <div className="text-2xl font-bold">PRINCEBERG</div>
-        <div className="text-sm opacity-90">Das System für moderne Websites</div>
+        <div className="text-sm opacity-90">Das System für individuelle Unternehmenssoftware</div>
         <div className="text-sm opacity-90">Spinoff eines Uni-Projekts | Seit Mai 2025</div>
         
         <div className="space-y-2">

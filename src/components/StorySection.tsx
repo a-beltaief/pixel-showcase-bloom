@@ -1,21 +1,19 @@
-import { Check } from "lucide-react";
-
 export const StorySection = () => {
   const timeline = [
     {
       year: "2024",
-      title: "Die Idee",
-      description: "In einem Uni-Projekt entwickeln wir ein revolutionäres System für effiziente Web-Entwicklung - ohne Qualitätsverlust."
+      title: "Die Erkenntnis",
+      description: "Jedes Unternehmen kämpft mit denselben Problemen: zu viele Tools, nichts passt zusammen, Daten überall verteilt."
     },
     {
       year: "Mai 2025",
-      title: "Das Spinoff",
-      description: "Aus dem Uni-Projekt wird PRINCEBERG. Unser System bewährt sich bei ersten Kunden."
+      title: "Das System",
+      description: "Wir entwickeln einen Weg, maßgeschneiderte Software schnell und bezahlbar zu bauen – mit modernsten KI-Tools."
     },
     {
       year: "Heute",
-      title: "Ihre Chance",
-      description: "Unser System ermöglicht Premium-Websites zum Bruchteil der üblichen Kosten - in nur 14 Tagen."
+      title: "Deine Chance",
+      description: "Unternehmen bekommen Individualsoftware, die früher nur Konzernen vorbehalten war – zu einem Bruchteil der Kosten."
     }
   ];
 

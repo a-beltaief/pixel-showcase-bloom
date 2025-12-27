@@ -4,28 +4,28 @@ export const FAQSection = () => {
   const faqs = [
     {
       id: "cost",
-      question: "Wie kann das nur 50€/Monat kosten?",
-      answer: "Unser selbst entwickeltes System automatisiert 70% der Arbeit. Wir haben keine Bürokosten (arbeiten von der WG), keine Investoren (die Rendite wollen) und kein aufgeblähtes Team. Diese Ersparnisse geben wir direkt an Sie weiter."
+      question: "Wie kann das günstiger sein als eine Agentur?",
+      answer: "Wir nutzen KI-Tools und ein bewährtes Modulsystem. Weniger Stunden, gleiche Qualität."
     },
     {
-      id: "timeline", 
-      question: "Ist die Website wirklich in 14 Tagen fertig?",
-      answer: "Ja, garantiert. Unser System macht's möglich. Tag 1-2: Konzept, Tag 3-7: Design, Tag 8-13: Entwicklung, Tag 14: Launch. Wenn wir's nicht schaffen, ist der erste Monat kostenlos."
+      id: "needs", 
+      question: "Was wenn ich nicht weiß, was ich brauche?",
+      answer: "Dafür ist das Erstgespräch. Wir finden gemeinsam raus, welcher Prozess am meisten nervt – und starten dort."
     },
     {
-      id: "included",
-      question: "Was ist alles im Preis inklusive?", 
-      answer: "Alles. Hosting, Domain-Verwaltung, SSL-Zertifikat, E-Mail-Setup, DSGVO-konform, Cookie-Banner, Mobile-Optimierung, SEO-Grundlagen. Keine versteckten Kosten, keine Setup-Gebühren."
+      id: "features",
+      question: "Kann ich später Features hinzufügen?", 
+      answer: "Ja. Das System ist modular gebaut. Neue Funktionen werden einfach angedockt."
     },
     {
-      id: "system",
-      question: "Was ist dieses System genau?",
-      answer: "Unser eigenes Entwicklungs-System, entstanden aus jahrelanger Forschung im Uni-Projekt. Getestete Premium-Module, die wir individuell für Sie zusammensetzen. Das Ergebnis: Maßgeschneiderte Qualität in 14 Tagen statt 8 Wochen - ohne Abstriche, nur ohne Zeitverschwendung."
+      id: "data",
+      question: "Was passiert mit meinen Daten wenn ich kündige?",
+      answer: "Deine Daten gehören dir. Vollständiger Export jederzeit möglich."
     },
     {
-      id: "cancellation",
-      question: "Kann ich monatlich kündigen?",
-      answer: "Ja, jederzeit zum Monatsende. Keine Mindestlaufzeit, keine Kündigungsfrist. Eine WhatsApp-Nachricht reicht. Ihre Website bleibt online bis zum letzten bezahlten Tag."
+      id: "technical",
+      question: "Brauche ich technisches Wissen?",
+      answer: "Nein. Du nutzt die Software, wir kümmern uns um Technik, Hosting und Updates."
     }
   ];
 
@@ -37,7 +37,7 @@ export const FAQSection = () => {
             Häufig gestellte Fragen
           </h2>
           <p className="text-lg text-muted-foreground">
-            Ehrliche Antworten auf Ihre wichtigsten Fragen
+            Ehrliche Antworten auf deine wichtigsten Fragen
           </p>
         </div>
 

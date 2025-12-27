@@ -28,19 +28,19 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-primary mb-6">
-          All-in System. All-in Service. Deine Website in 14 Tagen.
+          Deine Software. Nur für dich gebaut.
         </h2>
         
-        <div className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold mb-6 inline-block">
-          Website nach 14 Tage noch immer nicht geliefert? 100% Stornierung ohne wenn und aber
-        </div>
-        
-        <p className="text-xl md:text-2xl text-foreground mb-4">
-          <strong>Vom Uni-Projekt zum Startup</strong> - seit Mai 2025 am Markt
+        <p className="text-xl md:text-2xl text-foreground mb-4 max-w-3xl mx-auto">
+          Schluss mit 10 Tools die nicht zusammenpassen. Eine Lösung, die exakt das macht was dein Business braucht.
         </p>
         
+        <div className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold mb-6 inline-block">
+          Erster Prototyp in 7 Tagen – oder du entscheidest neu.
+        </div>
+        
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Wir machen. Du entspannst. Website läuft.
+          Wir bauen. Du arbeitest. System läuft.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -48,13 +48,13 @@ export const Hero = () => {
             href="/termine"
             className="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-hover transition-colors"
           >
-            Termin buchen
+            Erstgespräch buchen
           </a>
           <a 
-            href="#pricing"
+            href="#system"
             className="border border-primary text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors"
           >
-            Pakete ansehen
+            So funktioniert's
           </a>
         </div>
       </div>
