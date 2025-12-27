@@ -92,7 +92,7 @@ export const CaseStudies = () => {
             return (
               <div 
                 key={index}
-                className={`bg-card rounded-xl border border-card-border p-6 cursor-pointer transition-all duration-300 ${
+                className={`bg-card rounded-xl border border-card-border p-6 cursor-pointer transition-all duration-300 flex flex-col ${
                   isExpanded ? 'ring-2 ring-primary shadow-lg' : 'hover:border-primary/50'
                 }`}
                 onClick={() => setExpandedIndex(isExpanded ? null : index)}
@@ -113,9 +113,11 @@ export const CaseStudies = () => {
                   {caseItem.metric}
                 </div>
 
-                {/* Company Info */}
-                <p className="text-sm text-foreground-muted mb-2">{caseItem.company}</p>
-                <p className="text-xs text-foreground-muted mb-4">{caseItem.size}</p>
+                {/* Company Info - flex-grow to push expand indicator to bottom */}
+                <div className="flex-grow">
+                  <p className="text-sm text-foreground-muted mb-1">{caseItem.company}</p>
+                  <p className="text-xs text-foreground-muted">{caseItem.size}</p>
+                </div>
 
                 {/* Expandable Content */}
                 <div className={`overflow-hidden transition-all duration-300 ${
