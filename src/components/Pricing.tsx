@@ -115,46 +115,17 @@ export const Pricing = () => {
           ))}
         </div>
 
-        {/* Flex Paket */}
-        <div className="mt-8 flex justify-center">
-          <div className="bg-card rounded-xl p-6 border border-primary/30 relative max-w-md w-full">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                Für Gründer
-              </span>
-            </div>
-            
-            <div className="text-center mb-4">
-              <h3 className="text-xl font-bold text-primary mb-2">Flex</h3>
-              <p className="text-foreground-muted text-sm">Für Startups & Gründer</p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Starter oder Business Paket</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Setup auf 6-12 Monate verteilt</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Individuelle Zahlungsziele</span>
-              </div>
-            </div>
-
+        {/* Startup Banner */}
+        <div className="mt-8">
+          <div className="bg-card border border-primary/30 rounded-xl px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+            <span className="text-foreground">
+              🚀 <span className="font-semibold">Startup?</span> Setup-Kosten auf 6-12 Monate verteilen.
+            </span>
             <a 
               href="/termine?service=kostenlose-erstberatung"
-              className="w-full py-3 rounded-lg font-semibold transition-colors text-center block bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20"
+              className="text-primary hover:underline font-medium whitespace-nowrap"
             >
-              Flex anfragen
+              Flex-Modell anfragen →
             </a>
           </div>
         </div>
