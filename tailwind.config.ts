@@ -119,6 +119,7 @@ export default {
         "infinite-scroll": "infinite-scroll 120s linear infinite",
         "scroll-left": "scroll-left 40s linear infinite",
         "scroll-right": "scroll-right 40s linear infinite",
+        "scroll-right-slow": "scroll-right 60s linear infinite",
       },
     },
   },
