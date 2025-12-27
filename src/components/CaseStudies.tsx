@@ -1,23 +1,7 @@
-import { Truck, Pizza, Wrench, Building2 } from "lucide-react";
+import { Pizza, Wrench, Building2 } from "lucide-react";
 import { useState } from "react";
 
 const cases = [
-  {
-    icon: Truck,
-    branch: "Logistik",
-    company: "Spedition aus Niederösterreich",
-    size: "12 Fahrzeuge, 18 Mitarbeiter",
-    headline: "Tourenplanung digitalisiert",
-    problem: "Tourenplanung lief über Excel und WhatsApp-Gruppen. Fahrer bekamen Updates zu spät, Disponenten hatten keinen Überblick.",
-    solution: "Digitale Tourenverwaltung mit Live-Status. Fahrer updaten per App, Büro sieht alles in Echtzeit.",
-    results: [
-      "3 Stunden weniger Koordinationsaufwand pro Tag",
-      "Keine verpassten Abholungen mehr",
-      "Kundenzufriedenheit gestiegen"
-    ],
-    metric: "-3h Aufwand/Tag",
-    quote: "Endlich wissen wir wo unsere LKWs sind – ohne 20 Anrufe am Tag."
-  },
   {
     icon: Pizza,
     branch: "Gastronomie",
@@ -84,7 +68,7 @@ export const CaseStudies = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {cases.map((caseItem, index) => {
             const Icon = caseItem.icon;
             const isExpanded = expandedIndex === index;

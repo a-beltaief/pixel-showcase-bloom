@@ -1,15 +1,11 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { CaseStudies } from "@/components/CaseStudies";
-import { StorySection } from "@/components/StorySection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { TechStack } from "@/components/TechStack";
-import { TeamGallery } from "@/components/TeamGallery";
 import { Founders } from "@/components/Founders";
 import { Pricing } from "@/components/Pricing";
 import { BookingSection } from "@/components/BookingSection";
-import { WhySection } from "@/components/WhySection";
-import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -23,12 +19,9 @@ const Index = () => {
         <CaseStudies />
         <ProcessSection />
         <TechStack />
-        <TeamGallery />
         <Founders />
         <Pricing />
         <BookingSection />
-        <WhySection />
-        <CTASection />
         <FAQSection />
         <Footer />
       </div>
