@@ -1,4 +1,4 @@
-import { Check, Blocks, Cpu, Settings } from "lucide-react";
+import { Check, Blocks, Users, Settings } from "lucide-react";
 
 export const ProcessSection = () => {
   const features = [
@@ -8,9 +8,9 @@ export const ProcessSection = () => {
       description: "Bewährte Kernmodule (Login, Dashboard, Datenbank) – sofort einsatzbereit, individuell anpassbar."
     },
     {
-      icon: Cpu,
-      title: "KI-gestützte Entwicklung",
-      description: "Moderne Tools beschleunigen den Build – ohne Qualitätsverlust. Weniger Overhead, mehr Output."
+      icon: Users,
+      title: "Lean & Effizient",
+      description: "Kein Agentur-Wasserkopf. Ein Kernteam steuert, spezialisierte Entwickler liefern."
     },
     {
       icon: Settings,
@@ -30,7 +30,7 @@ export const ProcessSection = () => {
             Warum wir in 4 Wochen schaffen, wofür Agenturen 6 Monate brauchen
           </h3>
           <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
-            Unser System kombiniert bewährte Bausteine mit KI-gestützter Entwicklung:
+            Unser System kombiniert bewährte Bausteine mit einem spezialisierten Entwickler-Netzwerk:
           </p>
         </div>
 
