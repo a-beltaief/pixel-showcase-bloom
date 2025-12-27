@@ -46,18 +46,19 @@ export const TeamGallery = () => {
       </div>
 
       {/* Row 1 - scrolls left */}
-      <div className="relative mb-4">
-        <div className="flex gap-4 animate-scroll-left">
+      <div className="relative mb-3">
+        <div className="flex gap-3 animate-scroll-left">
           {row1Images.map((img, index) => (
             <div 
               key={`row1-${index}`}
-              className="flex-shrink-0 w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden"
+              className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-card"
             >
               <img 
                 src={img} 
                 alt={`Team ${index + 1}`}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
@@ -66,17 +67,18 @@ export const TeamGallery = () => {
 
       {/* Row 2 - scrolls right */}
       <div className="relative">
-        <div className="flex gap-4 animate-scroll-right">
+        <div className="flex gap-3 animate-scroll-right">
           {row2Images.map((img, index) => (
             <div 
               key={`row2-${index}`}
-              className="flex-shrink-0 w-48 h-48 md:w-56 md:h-56 rounded-xl overflow-hidden"
+              className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-card"
             >
               <img 
                 src={img} 
                 alt={`Team ${index + 1}`}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
