@@ -3,14 +3,24 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const FAQSection = () => {
   const faqs = [
     {
-      id: "cost",
-      question: "Wie kann das günstiger sein als eine Agentur?",
-      answer: "Wir nutzen KI-Tools und ein bewährtes Modulsystem. Weniger Stunden, gleiche Qualität."
+      id: "speed",
+      question: "Wie schafft ihr das in 4 Wochen, wofür Agenturen 6 Monate brauchen?",
+      answer: "Wir kombinieren bewährte Kernmodule mit einem spezialisierten Entwickler-Netzwerk. Kein Agentur-Wasserkopf, kein unnötiger Overhead – ein Kernteam steuert, Experten liefern."
+    },
+    {
+      id: "prototype",
+      question: "Was genau bekomme ich nach 7 Tagen?",
+      answer: "Einen funktionierenden Prototyp deiner Software, mit dem du arbeiten und Feedback geben kannst. So siehst du früh, ob die Richtung stimmt."
     },
     {
       id: "needs", 
       question: "Was wenn ich nicht weiß, was ich brauche?",
       answer: "Dafür ist das Erstgespräch. Wir finden gemeinsam raus, welcher Prozess am meisten nervt – und starten dort."
+    },
+    {
+      id: "flex",
+      question: "Was ist das Flex-Modell für Startups?",
+      answer: "Du kannst die Setup-Kosten auf 6-12 Monate verteilen. So startest du sofort, ohne dein ganzes Budget auf einmal zu investieren."
     },
     {
       id: "features",
