@@ -11,7 +11,6 @@ export const Pricing = () => {
       features: [
         "1-2 Module (z.B. Kundenverwaltung, Terminbuchung)",
         "Hosting & Updates inkl.",
-        "E-Mail Support",
         "DSGVO-konform",
         "Monatliche Anpassungen inkl."
       ],
@@ -20,16 +19,15 @@ export const Pricing = () => {
     },
     {
       name: "Business",
-      price: "ab 600€",
+      price: "ab 500€",
       period: "pro Monat",
-      setup: "5.000€ einmalig",
+      setup: "4.000€ einmalig",
       description: "Wachsende Unternehmen mit komplexeren Abläufen",
       features: [
         "Alles aus Starter +",
         "Vollständiges System mit mehreren Modulen",
-        "WhatsApp & Call Support",
-        "Analytics Dashboard",
-        "Prioritäts-Support"
+        "KI-gestützte Automatisierung (Claude, GPT, Gemini)",
+        "Analytics Dashboard"
       ],
       cta: "Business wählen",
       popular: true
@@ -54,7 +52,7 @@ export const Pricing = () => {
 
   return (
     <section id="pricing" className="py-16 px-6 bg-background-secondary">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Pakete
@@ -64,27 +62,70 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-6">
+          {/* Flex Paket */}
+          <div className="bg-card rounded-xl p-6 border border-primary/30 relative">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                Für Gründer
+              </span>
+            </div>
+            
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-primary mb-2">Flex</h3>
+              <p className="text-foreground-muted text-sm">Für Startups & Gründer</p>
+            </div>
+
+            <ul className="space-y-3 mb-6">
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Starter oder Business Paket</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Setup auf 6-12 Monate verteilt</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Individuelle Zahlungsziele</span>
+              </li>
+            </ul>
+
+            <a 
+              href="/termine?service=kostenlose-erstberatung"
+              className="w-full py-3 rounded-lg font-semibold transition-colors text-center block bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20"
+            >
+              Flex anfragen
+            </a>
+          </div>
+
+          {/* Regular Packages */}
           {packages.map((pkg, index) => (
             <div 
               key={index} 
-              className={`bg-card rounded-xl p-8 border border-card-border relative ${
+              className={`bg-card rounded-xl p-6 border border-card-border relative ${
                 pkg.popular ? 'border-primary shadow-lg' : ''
               }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold">
                     Beliebt
                   </span>
                 </div>
               )}
               
-              <div className="text-center mb-6">
+              <div className="text-center mb-4">
                 <h3 className="text-xl font-bold text-primary mb-2">{pkg.name}</h3>
                 <div className="mb-2">
-                  <span className="text-3xl font-bold">{pkg.price}</span>
-                  <span className="text-foreground-muted ml-1">{pkg.period}</span>
+                  <span className="text-2xl font-bold">{pkg.price}</span>
+                  <span className="text-foreground-muted ml-1 text-sm">{pkg.period}</span>
                 </div>
                 <div className="text-sm text-foreground-muted mb-2">
                   Setup: {pkg.setup}
@@ -92,7 +133,7 @@ export const Pricing = () => {
                 <p className="text-foreground-muted text-sm">{pkg.description}</p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
@@ -117,22 +158,11 @@ export const Pricing = () => {
           ))}
         </div>
 
-        {/* Startup Flex Hinweis */}
-        <div className="mt-12 text-center">
-          <div className="inline-block bg-card border border-primary/30 rounded-xl px-8 py-6">
-            <p className="text-lg font-semibold text-foreground mb-2">
-              Startup? Budget tight?
-            </p>
-            <p className="text-foreground-muted mb-4">
-              Wir finden eine Lösung. Setup-Kosten lassen sich aufteilen – sprich uns einfach an.
-            </p>
-            <a 
-              href="/termine?service=kostenlose-erstberatung"
-              className="text-primary hover:underline font-medium"
-            >
-              Flex-Modell anfragen →
-            </a>
-          </div>
+        {/* Support Hinweis */}
+        <div className="mt-8 text-center">
+          <p className="text-foreground-muted">
+            <span className="font-semibold text-foreground">Support für alle inkludiert</span> – Egal welches Paket, du erreichst uns per Mail, WhatsApp oder Call.
+          </p>
         </div>
 
         <div className="text-center mt-8 space-y-4">
