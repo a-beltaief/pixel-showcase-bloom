@@ -62,50 +62,7 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          {/* Flex Paket */}
-          <div className="bg-card rounded-xl p-6 border border-primary/30 relative">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
-                Für Gründer
-              </span>
-            </div>
-            
-            <div className="text-center mb-4">
-              <h3 className="text-xl font-bold text-primary mb-2">Flex</h3>
-              <p className="text-foreground-muted text-sm">Für Startups & Gründer</p>
-            </div>
-
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Starter oder Business Paket</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Setup auf 6-12 Monate verteilt</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                  <Check className="w-3 h-3 text-primary" />
-                </div>
-                <span className="text-sm text-foreground-secondary">Individuelle Zahlungsziele</span>
-              </li>
-            </ul>
-
-            <a 
-              href="/termine?service=kostenlose-erstberatung"
-              className="w-full py-3 rounded-lg font-semibold transition-colors text-center block bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20"
-            >
-              Flex anfragen
-            </a>
-          </div>
-
-          {/* Regular Packages */}
+        <div className="grid md:grid-cols-3 gap-6">
           {packages.map((pkg, index) => (
             <div 
               key={index} 
@@ -156,6 +113,50 @@ export const Pricing = () => {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Flex Paket */}
+        <div className="mt-8 flex justify-center">
+          <div className="bg-card rounded-xl p-6 border border-primary/30 relative max-w-md w-full">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold">
+                Für Gründer
+              </span>
+            </div>
+            
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-primary mb-2">Flex</h3>
+              <p className="text-foreground-muted text-sm">Für Startups & Gründer</p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Starter oder Business Paket</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Setup auf 6-12 Monate verteilt</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-sm text-foreground-secondary">Individuelle Zahlungsziele</span>
+              </div>
+            </div>
+
+            <a 
+              href="/termine?service=kostenlose-erstberatung"
+              className="w-full py-3 rounded-lg font-semibold transition-colors text-center block bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20"
+            >
+              Flex anfragen
+            </a>
+          </div>
         </div>
 
         {/* Support Hinweis */}
