@@ -11,7 +11,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import AboutUs from "./pages/AboutUs";
-import Projects from "./pages/Projects";
+
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -35,7 +35,7 @@ const Preloader = () => {
       // Only preload if we're on the home page to avoid double loading
       if (location.pathname === '/') {
         // Trigger rendering of other pages in hidden iframes or load their resources
-        const routes = ['/ueber-uns', '/projekte', '/kontakt', '/termine', '/jobs'];
+        const routes = ['/ueber-uns', '/kontakt', '/termine', '/jobs'];
         
         // Preload images by creating image objects
         routes.forEach(route => {
@@ -64,7 +64,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ueber-uns" element={<AboutUs />} />
-          <Route path="/projekte" element={<Projects />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/termine" element={<Booking />} />
           <Route path="/jobs" element={<Jobs />} />

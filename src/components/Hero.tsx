@@ -28,16 +28,24 @@ export const Hero = () => {
         </h1>
         
         <h2 className="text-2xl md:text-3xl text-primary mb-6">
-          Deine Software. Nur für dich gebaut.
+          Eine Software. Deine Prozesse. Kein Workaround.
         </h2>
         
         <p className="text-xl md:text-2xl text-foreground mb-4 max-w-3xl mx-auto">
           Schluss mit 10 Tools die nicht zusammenpassen. Eine Lösung, die exakt das macht was dein Business braucht.
         </p>
         
-        <div className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-semibold mb-6 inline-block">
-          Erster Prototyp in 7 Tagen – oder du entscheidest neu.
+        {/* Social Proof Counter */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6 text-foreground-muted">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span className="text-sm font-medium">Aktuell 3 Projekte in Entwicklung</span>
+          </div>
+          <div className="text-sm font-medium">
+            ⚡ Erster Prototyp in 7 Tagen
+          </div>
         </div>
+        
         
         <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
           Wir bauen. Du arbeitest. System läuft.
