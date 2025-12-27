@@ -46,10 +46,6 @@ export const Hero = () => {
           </div>
         </div>
         
-        
-        <p className="text-2xl md:text-3xl font-semibold text-primary mb-8">
-          Wir bauen. Du arbeitest. System läuft.
-        </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
