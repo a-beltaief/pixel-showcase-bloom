@@ -35,11 +35,15 @@ export const Hero = () => {
           Schluss mit 10 Tools die nicht zusammenpassen. Eine Lösung, die exakt das macht was dein Business braucht.
         </p>
         
-        {/* Social Proof Counter */}
+        {/* Live Project Counter */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6 text-foreground-muted">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium">Aktuell 3 Projekte in Entwicklung</span>
+          <div className="flex items-center gap-2 bg-muted/50 px-4 py-2 rounded-full border border-border/50">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span className="text-xs uppercase tracking-wider text-muted-foreground">Live</span>
+            <span className="text-sm font-semibold text-foreground">3 Projekte in Entwicklung</span>
           </div>
           <div className="text-sm font-medium">
             ⚡ Erster Prototyp in 7 Tagen
