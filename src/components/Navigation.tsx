@@ -6,7 +6,6 @@ export const Navigation = () => {
 
   const navItems = [
     { href: "/ueber-uns", label: "Über uns" },
-    { href: "/projekte", label: "Projekte" },
     { href: "/termine", label: "Termin" },
     { href: "/jobs", label: "Jobs" },
     { href: "/kontakt", label: "Kontakt" },
