@@ -115,15 +115,21 @@ export const Pricing = () => {
           ))}
         </div>
 
-        {/* Startup Banner */}
-        <div className="mt-8">
-          <div className="bg-card border border-primary/30 rounded-xl px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-            <span className="text-foreground">
-              🚀 <span className="font-semibold">Startup?</span> Setup-Kosten auf 6-12 Monate verteilen.
-            </span>
+        {/* Startup Flex Banner - Full Width Horizontal */}
+        <div className="mt-12 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-2xl">
+                🚀
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground">Startup Flex-Modell</h3>
+                <p className="text-foreground-muted">Setup-Kosten auf 6-12 Monate verteilen – starte sofort ohne großes Investment</p>
+              </div>
+            </div>
             <a 
               href="/termine?service=kostenlose-erstberatung"
-              className="text-primary hover:underline font-medium whitespace-nowrap"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors whitespace-nowrap"
             >
               Flex-Modell anfragen →
             </a>
