@@ -32,7 +32,7 @@ export const Hero = () => {
         </h2>
         
         <p className="text-xl md:text-2xl text-foreground mb-6 max-w-3xl mx-auto">
-          Schluss mit 10 Tools die nicht zusammenpassen. Eine Lösung, die exakt das macht was dein Business braucht – erster Prototyp in 7 Tagen.
+          Statt 10 Tools: eines. Maßgeschneidert für dein Business. Prototyp in 7 Tagen.
         </p>
         
         {/* Live Project Counter */}
