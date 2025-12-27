@@ -117,7 +117,25 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 space-y-4">
+        {/* Startup Flex Hinweis */}
+        <div className="mt-12 text-center">
+          <div className="inline-block bg-card border border-primary/30 rounded-xl px-8 py-6">
+            <p className="text-lg font-semibold text-foreground mb-2">
+              Startup? Budget tight?
+            </p>
+            <p className="text-foreground-muted mb-4">
+              Wir finden eine Lösung. Setup-Kosten lassen sich aufteilen – sprich uns einfach an.
+            </p>
+            <a 
+              href="/termine?service=kostenlose-erstberatung"
+              className="text-primary hover:underline font-medium"
+            >
+              Flex-Modell anfragen →
+            </a>
+          </div>
+        </div>
+
+        <div className="text-center mt-8 space-y-4">
           <p className="text-foreground-muted">
             Alle Preise inkl. Hosting, Updates und DSGVO-Compliance
           </p>
