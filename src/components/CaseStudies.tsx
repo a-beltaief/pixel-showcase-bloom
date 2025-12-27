@@ -120,8 +120,8 @@ export const CaseStudies = () => {
                 </div>
 
                 {/* Expandable Content */}
-                <div className={`overflow-hidden transition-all duration-300 ${
-                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                <div className={`transition-all duration-300 ${
+                  isExpanded ? 'max-h-64 opacity-100 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'
                 }`}>
                   <div className="pt-4 border-t border-card-border space-y-4">
                     <div>
