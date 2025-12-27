@@ -2,18 +2,18 @@ export const WhySection = () => {
   const facts = [
     {
       number: "1",
-      title: "Unabhängig",
-      description: "Keine Investoren = Keine überhöhten Preise"
+      title: "Keine Agentur-Preise",
+      description: "Kein Wasserkopf, keine Overhead-Kosten. Du zahlst für Ergebnis, nicht für Meetings."
     },
     {
       number: "2", 
-      title: "Bewährt",
-      description: "Unser System seit Mai 2025 erfolgreich im Einsatz, bereits 20+ begeisterte Kunden"
+      title: "Dein System, deine Daten",
+      description: "Keine Abhängigkeit von SaaS-Anbietern. Die Software gehört dir."
     },
     {
       number: "3",
-      title: "Transparent", 
-      description: "50€ bedeutet 50€. Keine Überraschungen."
+      title: "Wächst mit dir", 
+      description: "Heute ein Modul, morgen drei. Wir bauen weiter wenn du es brauchst."
     }
   ];
 

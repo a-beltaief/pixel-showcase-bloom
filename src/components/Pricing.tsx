@@ -1,62 +1,59 @@
-import { Check, MessageCircle, Mail } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const Pricing = () => {
   const packages = [
     {
-      name: "Basic Website",
-      price: "50€",
+      name: "Starter",
+      price: "ab 300€",
       period: "pro Monat",
-      description: "Perfekt für kleine Unternehmen",
+      setup: "2.500€ einmalig",
+      description: "Kleine Unternehmen mit 1-2 Kernprozessen",
       features: [
-        "5 Seiten inklusive",
-        "Responsive Design (Mobile & Desktop)",
-        "SEO-Grundoptimierung",
-        "SSL-Zertifikat inklusive",
+        "1-2 Module (z.B. Kundenverwaltung, Terminbuchung)",
+        "Hosting & Updates inkl.",
+        "E-Mail Support",
         "DSGVO-konform",
-        "Hosting inklusive",
-        "E-Mail-Support"
+        "Monatliche Anpassungen inkl."
       ],
-      cta: "Basic wählen",
+      cta: "Starter wählen",
       popular: false
     },
     {
-      name: "Plus Website",
-      price: "80€",
+      name: "Business",
+      price: "ab 600€",
       period: "pro Monat",
-      description: "Für wachsende Unternehmen",
+      setup: "5.000€ einmalig",
+      description: "Wachsende Unternehmen mit komplexeren Abläufen",
       features: [
-        "10 Seiten inklusive",
-        "Alles aus Basic +",
-        "API-Integration",
-        "Datenbank-Anbindung",
+        "Alles aus Starter +",
+        "Vollständiges System mit mehreren Modulen",
+        "WhatsApp & Call Support",
         "Analytics Dashboard",
-        "WhatsApp-Support",
-        "Monatlich 2h Änderungen"
+        "Prioritäts-Support"
       ],
-      cta: "Plus wählen",
+      cta: "Business wählen",
       popular: true
     },
     {
-      name: "Premium Website",
-      price: "Individual",
+      name: "Enterprise",
+      price: "Individuell",
       period: "Angebot",
-      description: "Für komplexe Projekte",
+      setup: "Nach Aufwand",
+      description: "Größere Projekte mit Integrationen",
       features: [
-        "Unbegrenzte Seiten",
-        "Alles aus Plus +",
-        "Custom Development",
-        "API-Entwicklung",
-        "Prioritäts-Support",
+        "Alles aus Business +",
+        "Unbegrenzte Module + API-Anbindungen",
         "Dedicated Account Manager",
-        "SLA-Garantie"
+        "SLA-Garantie",
+        "Custom Integrationen"
       ],
-      cta: "Premium wählen",
+      cta: "Enterprise anfragen",
       popular: false
     }
   ];
 
   return (
-    <section className="py-16 px-6 bg-background-secondary">
+    <section id="pricing" className="py-16 px-6 bg-background-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -89,6 +86,9 @@ export const Pricing = () => {
                   <span className="text-3xl font-bold">{pkg.price}</span>
                   <span className="text-foreground-muted ml-1">{pkg.period}</span>
                 </div>
+                <div className="text-sm text-foreground-muted mb-2">
+                  Setup: {pkg.setup}
+                </div>
                 <p className="text-foreground-muted text-sm">{pkg.description}</p>
               </div>
 
@@ -96,61 +96,33 @@ export const Pricing = () => {
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <Check className="w-3 h-3 text-primary" />
                     </div>
                     <span className="text-sm text-foreground-secondary">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              {index === 0 ? (
-                <a 
-                  href="https://buy.stripe.com/28E9AN7CUeaNcZb3I7d3i00"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
-                    pkg.popular 
-                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
-                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
-                  }`}
-                >
-                  {pkg.cta}
-                </a>
-              ) : index === 1 ? (
-                <a 
-                  href="https://buy.stripe.com/cNi00dg9q0jXbV77Ynd3i01"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
-                    pkg.popular 
-                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
-                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
-                  }`}
-                >
-                  {pkg.cta}
-                </a>
-              ) : (
-                <a 
-                  href="/termine?service=kostenlose-erstberatung"
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
-                    pkg.popular 
-                      ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
-                      : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
-                  }`}
-                >
-                  {pkg.cta}
-                </a>
-              )}
+              <a 
+                href="/termine?service=kostenlose-erstberatung"
+                className={`w-full py-3 rounded-lg font-semibold transition-colors text-center block ${
+                  pkg.popular 
+                    ? 'bg-primary text-primary-foreground hover:bg-primary-hover' 
+                    : 'bg-card-secondary text-foreground border border-card-border hover:bg-accent'
+                }`}
+              >
+                {pkg.cta}
+              </a>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12 space-y-4">
           <p className="text-foreground-muted">
-            Alle Preise inkl. Hosting, SSL-Zertifikat und DSGVO-Compliance
+            Alle Preise inkl. Hosting, Updates und DSGVO-Compliance
           </p>
           <p className="text-foreground-muted text-sm">
-            ✓ Keine Setup-Kosten ✓ 30 Tage Geld-zurück-Garantie
+            ✓ Keine versteckten Kosten ✓ Nach 12 Monaten monatlich kündbar
           </p>
         </div>
       </div>
